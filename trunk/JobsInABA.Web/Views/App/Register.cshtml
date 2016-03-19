@@ -1,0 +1,88 @@
+﻿<div ng-controller="RegisterController" id="post-job-wrapper" class="wrapper">
+    <div class="pagewidth">
+        <div id="post-job-wrapper1" class="wrapper">
+            <div class="pagewidth">
+                <center>
+                    <div class="right-side" style="float: none;">
+                        <div class="box">
+                            <h1>REGISTRATION</h1>
+                            <h2 ng-model="message"></h2>
+                            <form id="myForm" role="form" name="myForm" novalidate ng-submit="submitForm()">
+                                <input type="text" ng-model="firstName" ng-required="true" placeholder="FIRST NAME" class="formhalf formfull">
+                                <span style="color:red" ng-show="firstName.$dirty && myForm.user.$invalid">
+                                    <span ng-show="firstName.$error.required">First name is required.</span>
+                                </span>
+                                <input type="text" ng-model="lastName" ng-required="true" placeholder="LAST NAME" class="formhalf formfull">
+                                <span style="color:red" ng-show="lastName.$dirty && myForm.user.$invalid">
+                                    <span ng-show="lastName.$error.required">Last name is required.</span>
+                                </span>
+                                <input type="password" ng-model="password" ng-required="true" placeholder="PASSWORD" class="formhalf formfull">
+                                <span style="color:red" ng-show="password.$dirty && myForm.user.$invalid">
+                                    <span ng-show="password.$error.required">Password is required.</span>
+                                </span>
+                                <input type="password" ng-model="confirmPassword" ng-required="true" placeholder="CONFIRM PASSWORD" class="formhalf formfull">
+                                <span style="color:red" ng-show="confirmPassword.$dirty && myForm.user.$invalid">
+                                    <span ng-show="confirmPassword.$error.required">Confirm Password is required.</span>
+                                </span>
+                                <input type="text" ng-model="email" placeholder="USERNAME (EMAIL)" class="formfull">
+                                <span style="color:red" ng-show="email.$dirty && myForm.user.$invalid">
+                                    <span ng-show="email.$error.required">Username is required.</span>
+                                    <span ng-show="email.$error.email">Enter valid is email.</span>
+                                </span>
+                                <input type="text" ng-model="city" placeholder="CITY" class="formfull formthird">
+                                <span style="color:red" ng-show="city.$dirty && myForm.user.$invalid">
+                                    <span ng-show="city.$error.required">City is required.</span>
+                                </span>
+                                <input type="text" ng-model="state" placeholder="STATE" class="formfull formthird">
+                                <span style="color:red" ng-show="state.$dirty && myForm.user.$invalid">
+                                    <span ng-show="state.$error.required">State is required.</span>
+                                </span>
+                                <input type="text" ng-model="zip" placeholder="ZIP" class="formfull formthird">
+                                <span style="color:red" ng-show="zip.$dirty && myForm.user.$invalid">
+                                    <span ng-show="zip.$error.required">Zip is required.</span>
+                                </span>
+                                <div style="text-align: left; padding-left: 1%;">
+                                    <span class="formhalf formfull" style="border: 0px; padding: 14px 0px;">HIGHEST LEVEL OF EDUCATION COMPLETED</span>
+                                    <select class="formhalf formfull" ng-model="highestLevelOfEducation">
+                                        <option>High School Diploma/GED</option>
+                                        <option>Some College</option>
+                                        <option>Associate Degree</option>
+                                        <option>Bachelor Degree</option>
+                                        <option>Master Degree</option>
+                                        <option>Doctoral Degree</option>
+                                        <option>Juris Doctorate</option>
+                                        <option>Medical Degree</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div style="text-align: left; padding-left: 1%;">
+                                    <span class="formhalf formfull" style="border: 0px; padding: 14px 0px;">HOW DID YOU FIND JOBSINABA.COM?</span>
+                                    <select class="formhalf formfull" ng-model="howDidYouFindABA">
+                                        <option>Search Engine</option>
+                                        <option>JobsInABA.com User</option>
+                                        <option>Link on another Website</option>
+                                        <option>From a Friend</option>
+                                        <option>Other </option>
+                                    </select>
+                                </div>
+                                @*<div style="text-align: left; padding-left: 1%;">
+                                        <span class="formhalf formfull" style="border: 0px; float: left; padding: 14px 0px;">WHICH OF THESE SOCIAL MEDIA SITES DO YOU USE?</span>
+                                        <p class="formhalf formfull" ng-model="whichOfTheSocialMediaUse">
+                                            <input type="checkbox" value="ACCEPT THE RULES" id="checkbox">Facebook<br>
+                                            <input type="checkbox" value="ACCEPT THE RULES" id="checkbox">Twitter<br>
+                                            <input type="checkbox" value="ACCEPT THE RULES" id="checkbox">LinkedIn<br>
+                                            <input type="checkbox" value="ACCEPT THE RULES" id="checkbox">Instagram<br>
+                                            <input type="checkbox" value="ACCEPT THE RULES" id="checkbox">Pinterest<br>
+                                            <input type="checkbox" value="ACCEPT THE RULES" id="checkbox">Other <br>
+                                        </p>
+                                    </div>*@
+                                <button ng-click="register()" class="add1button" ng-disabled="!myForm.$valid">REGISTER</button>
+                                <div class="clear"></div>
+                            </form>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>

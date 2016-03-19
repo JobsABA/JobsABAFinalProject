@@ -1,0 +1,50 @@
+﻿<div class="box formfull" id="rbox">
+    <h1 id="location" onclick="addform(this)" style="cursor:pointer;  margin-left: 10px; font-weight: 400; color: #fe5a00;">ADD LOCATION</h1>
+    <form id="locationform" style="display:none; text-align:right;">
+        <textarea style="resize:none; height:120px;" placeholder="ADD1" class=" formfull" ng-model="addCompanyLocationlistModel.Address1"></textarea>
+        <textarea style="resize:none; height:120px;" placeholder="ADD2" class=" formfull" ng-model="addCompanyLocationlistModel.Address2"></textarea>
+        <input type="text" placeholder="CITY" class="formfull" ng-model="addCompanyLocationlistModel.City">
+        <input type="text" placeholder="STATE" class="formfull " ng-model="addCompanyLocationlistModel.State">
+        <input type="text" placeholder="COUNTRY" class="formfull " ng-model="addCompanyLocationlistModel.Country">
+        <input type="text" placeholder="EMPLOYEE" class="formhalf " ng-model="addCompanyLocationlistModel.Employee">
+        <input type="text" placeholder="PHONE" class="formhalf " ng-model="addCompanyLocationlistModel.Phone">
+        <input type="button" value="ADD" class="addbutton" ng-click="addCompanyLocationlist(addCompanyLocationlistModel)">
+        <div class="clear"></div>
+    </form>
+
+    <div class="top" style="padding: 26px; color:black;" ng-repeat="o in objLocationlist">
+        <div ng-show="isEditLocationlist_{{o.id}}">
+            <textarea style="resize:none; height:120px;" placeholder="ADD1" class=" formfull" ng-model="editCompanyLocationlistModel.Address1"></textarea>
+            <textarea style="resize:none; height:120px;" placeholder="ADD2" class=" formfull" ng-model="editCompanyLocationlistModel.Address2"></textarea>
+            <input type="text" placeholder="CITY" class="formfull" ng-model="editCompanyLocationlistModel.City">
+            <input type="text" placeholder="STATE" class="formfull " ng-model="editCompanyLocationlistModel.State">
+            <input type="text" placeholder="COUNTRY" class="formfull " ng-model="editCompanyLocationlistModel.Country">
+            <input type="text" placeholder="EMPLOYEE" class="formhalf " ng-model="editCompanyLocationlistModel.Employee">
+            <input type="text" placeholder="PHONE" class="formhalf " ng-model="editCompanyLocationlistModel.Phone">
+            
+            <a class="btn-edit" href="#" ng-click="saveEditLocationlist(editCompanyLocationlistModel)"><img src="assets/img/save-24.png"></a>
+            <a class="btn-edit" href="#" ng-click="cancelEditLocationlist(editCompanyLocationlistModel)"><img src="assets/img/close.png"></a>
+        </div>
+        <div ng-hide="isEditLocationlist_{{o.id}}">
+            <p>{{o.State}}<span ng-if="o.Country.length>0">,</span>{{o.Country}}</p>
+            <a class="btn-edit" href="#" ng-click="editLocationlist(o)"><img src="assets/img/edit-32.png"></a>
+            <a class="btn-delete" href="#" ng-click="deleteLocationlist(o.id)"><img src="assets/img/delete-32.png"></a>
+        </div>
+    </div>
+
+    @*<div class="top" style="padding: 26px; color:black;">
+        <p>location,india</p>
+        <a class="btn-edit" href="#"><img src="assets/img/edit-32.png"></a>
+        <a class="btn-delete" href="#"><img src="assets/img/delete-32.png"></a>
+    </div>
+    <div class="top" style="padding: 26px; color:black;">
+        <p>Gujrat,India</p>
+        <a class="btn-edit" href="#"><img src="assets/img/edit-32.png"></a>
+        <a class="btn-delete" href="#"><img src="assets/img/delete-32.png"></a>
+    </div>
+    <div class="top" style="padding: 26px; color:black;">
+        <p>India</p>
+        <a class="btn-edit" href="#"><img src="assets/img/edit-32.png"></a>
+        <a class="btn-delete" href="#"><img src="assets/img/delete-32.png"></a>
+    </div>*@
+</div>

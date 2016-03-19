@@ -1,0 +1,29 @@
+﻿<div ng-controller="SignInController" id="error-wrapper" class="wrapper">
+    <div class="background" style="background: transparent none repeat scroll 0% 0%;">
+        <div class="login" style="display: block; position: relative; " id="login-box" data-state="1">
+            <h1>Login</h1>
+            <div class="box" id="login1" style="margin: 0 auto;margin-top: 100px;margin-bottom: 100px;  height:227px;">
+                <form>
+                    <p>USERNAME</p>
+                    <input id="login" ng-model="username" type="text">
+                    <p>PASSWORD</p>
+                    <input id="password" ng-model="password" type="password">
+                    <input id="sent" value="LOGIN" type="submit">
+                    <br>
+                    <p onclick="forgotpass();" style="text-align: right;margin: 42px; padding:10px; cursor:pointer;">Forgot Password ?</p>
+                    <div class="clear"></div>
+                </form>
+            </div>
+            <div class="box" id="fpass" style="margin: 0 auto;margin-top: 100px;display:none;  width:245; ">
+                <form>
+                    <p>Email ID</p>
+                    <input id="login" type="text">
+                    <button ng-click="login()">LOG IN</button>
+                    <p style="text-align: right;margin: 42px; padding:16px; cursor:pointer;">Back To Login</p>
+                    <div class="clear"></div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

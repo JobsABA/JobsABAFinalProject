@@ -1,0 +1,78 @@
+﻿<div class="formfull" id="set" style="width: 95%; margin: 0px 2%;">
+    <div class="top" style="padding: 26px;">
+        <p><a href="jobdetail.html" class="jobapp">JOB APPLICATION 1</a></p><br>
+        <br>
+        <a class="btn-edit" id="app1" onclick="viewcandidate(this);">View Candidates</a>
+        <a href="jobDetail" class="btn-view">View Detail</a>
+        <a class="btn-edit" style="cursor:pointer;" onclick="appljob(this)">Apply</a>
+        <p>Created on <span class="detail">10-10-2013</span> </p>
+        <br><br>
+        <div id="candidateapp1" class="box candidatelist">
+            <div class="top" style="padding: 26px;">
+                <p style="float: none;">Candidate name</p>
+                <p>Applied on <span class="detail">10-10-2013</span> </p>
+                <br><br>
+                <span class="detail">Jobtitle</span>
+                <br><br>
+                <hr style="color: rgb(255, 255, 255);">
+            </div>
+            <div class="top" style="padding: 26px;">
+                <p style="float: none;">Candidate name</p>
+                <p>Applied on <span class="detail">10-10-2013</span> </p>
+                <br><br>
+                <span class="detail">Jobtitle</span>
+                <br><br>
+                <hr style="color: rgb(255, 255, 255);">
+            </div>
+            <div class="top" style="padding: 26px;">
+                <p style="float: none;">Candidate name</p>
+                <p>Applied on <span class="detail">10-10-2013</span> </p>
+                <br><br>
+                <span class="detail">Jobtitle</span>
+                <br><br>
+                <hr style="color: rgb(255, 255, 255);">
+            </div>
+        </div>
+        <hr style="color: rgb(255, 255, 255);">
+    </div>
+</div>
+<div class="overlay" style="position: fixed; left: 0px; height: 100%; width: 100%; display: none; background-color: rgba(0, 0, 0, 0.3); top: 0px;"></div>
+<div>
+    <div class="box formfull applydiv" style="width: 100%; display:none; text-align: center;  padding-bottom: 20px; max-width: 300px; margin: 0px auto; position: fixed; top: 15%; left: 33%; z-index: 101; background-color: rgb(255, 255, 255);">
+
+        <h1 style="font-size: 24px;  margin-left: 10px; font-weight: 400; color: #fe5a00;">ATTACH RESUME</h1>
+        <span onclick='close1();' style="position: relative; float: right; top: -38px; cursor:pointer;"> X</span>
+
+        <form id="achivementform">
+
+
+            <input placeholder="Upload Image" class="formfull" type="file" />
+            <input value="SEND" onclick="close1();" style="background: #FE5500;border: 12px solid #FE5500;border-right: 20px;font-size: 12px;text-decoration: none;color: #fff;font-weight: 300;padding-right: 40px;padding-left: 25px;margin-top: 15px;margin-bottom: 15px;" type="button" />
+            <div class="clear"></div>
+        </form>
+    </div>
+</div>
+<script>
+    function viewcandidate(elem) {
+        var id = elem.id;
+        $("#" + id).attr("onclick", "closeallcandidate(this)");
+        $(".candidatelist").slideUp();
+        $("#candidate" + id).slideDown();
+    }
+    function closeallcandidate(elem) {
+        var id = elem.id;
+        $("#" + id).attr("onclick", "viewcandidate(this)");
+        $(".candidatelist").slideUp();
+    }
+    function clicked() {
+        alert('Delete Successfully');
+    }
+    function appljob(elem) {
+        $(".overlay").show();
+        $(".applydiv").show();
+    }
+    function close1() {
+        $(".overlay").hide();
+        $(".applydiv").hide();
+    }
+</script>

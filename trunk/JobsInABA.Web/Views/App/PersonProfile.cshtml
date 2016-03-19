@@ -1,0 +1,20 @@
+﻿<div id="post-job-wrapper" class="wrapper" style="padding-top:0px;">
+    <input type="hidden" id="flag">
+    <div style="margin-top: 40px;">&nbsp;</div>
+    <div style="float:right; margin-right:85px;">
+        <dropdown>
+            <input id="toggle2" type="checkbox">
+            <label for="toggle2" class="animate">Edit</label>
+            <ul class="animate" style="top: 54px !important;">
+                <li class="animate"><a href="javascript:0">My Profile</a></li>
+                <li class="animate"><a href="companyprofile">Create Company</a></li>
+                <li class="animate"><a href="javascript:0">Applied Job Application List</a></li>
+                <li class="animate"><a href="javascript:0">Reset Password</a></li>
+            </ul>
+        </dropdown>
+    </div>
+    <div class="pagewidth" style=" max-width:1180px; padding:10px;">
+        @{Html.RenderPartial("LeftProfilePanelPortion");
+        Html.RenderPartial("RightProfilePanelPortion");}
+    </div>
+</div>

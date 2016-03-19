@@ -1,0 +1,53 @@
+﻿<div id="post-job-wrapper" class="wrapper" style="padding-top: 0px;">
+    @*<div style="margin-top: 40px;">&nbsp;</div>
+    <div class="pagewidth" style=" max-width:1180px; padding:10px;">
+        <div style="float:right;">
+            <dropdown>
+                <input id="toggle2" type="checkbox">
+                <label for="toggle2" class="animate">Edit</label>
+                <ul class="animate" style="top: 54px !important;">
+                    <li class="animate"><a href="viewcompanyprofile">View Company</a></li>
+                    <li class="animate"><a href="companyprofile.html">Edit Company Profile</a></li>
+                    <li class="animate"><a href="publishjob">Job Application</a></li>
+                    <li class="animate"><a href="payment.html">Payment Detail</a></li>
+                </ul>
+            </dropdown>
+        </div>
+    </div>*@
+    <div style="float:left;">
+        <a href="#" class="btn-delete" style="background:#ECF0F1 !important; color:#000 !important; font-weight:400; box-shadow: none !important;">COMPANY2</a>
+        <a href="#" class="btn-edit" style="background:#ECF0F1 !important; margin-left:125px; color:#000 !important; font-weight:400; box-shadow:none !important;">COMPANY1</a>
+    </div>
+    <div class="pagewidth">
+        <div class="left-side" style="color:#000; padding-top:55px;">
+            <div class="box formfull" id="rbox">
+                <h1 id="specialities" onclick="addform(this)" style=" cursor:pointer;  margin-left: 10px; font-weight: 400; color: #fe5a00;">ADD COMPANY SPECIALTIES</h1>
+                @{Html.RenderPartial("AddCompanySpecialties");}
+            </div>
+            @{Html.RenderPartial("AddEmployee");
+            Html.RenderPartial("AddCompanyAchievement");
+            Html.RenderPartial("AddLocation");}
+        </div>
+        @{Html.RenderPartial("AddCompanyProfile");}
+    </div>
+</div>
+<script>
+    function addform(elem) {
+        var id = elem.id;
+        $("#" + id + "form").slideDown();
+        $("#" + id).attr("src", "assets/img/minus.png")
+        $("#" + id).attr("onclick", "hideform(this)")
+    }
+    function hideform(elem) {
+        var id = elem.id;
+        $("#" + id + "form").slideUp();
+        $("#" + id).attr("src", "assets/img/plus.gif")
+        $("#" + id).attr("onclick", "addform(this)")
+    }
+    $("#target").click(function () {
+        alert("Handler for .click() called.");
+    });
+    $(function () {
+        //$("#datepicker").datepicker();
+    });
+</script>

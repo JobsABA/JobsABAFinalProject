@@ -1,0 +1,43 @@
+﻿<div class="right-side">
+    <div class="box tabdiv">
+        <h1>ADD COMPANY PROFILE</h1>
+        <form>
+            @*<input type="text" ng-model="firstName" placeholder="FIRST NAME" class="formhalf formfull">
+                <input type="text" ng-model="lastName" placeholder="LAST NAME" class="formhalf formfull">*@
+            <input type="text" ng-model="companyDetailModel.Name" placeholder="COMPANY NAME" class="formhalf formfull">
+            <input type="text" id="datepicker" ng-model="companyDetailModel.StartDate" placeholder="YEAR BUSINESS STARTED" class="formhalf formfull">
+            <input type="text" ng-model="companyDetailModel.Abbreviation" placeholder="ABBREVIATION" class="formhalf formfull">
+            <input type="text" ng-model="companyDetailModel.BusinessAddressLine1" placeholder="ADDRESS" class="formfull">
+            <input type="text" ng-model="companyDetailModel.BusinessAddressCity" placeholder="CITY" class="formfull formthird">
+            <input type="text" ng-model="companyDetailModel.BusinessAddressState" placeholder="STATE" class="formfull formthird">
+            <input type="text" ng-model="companyDetailModel.BusinessAddressZipCode" placeholder="ZIP" class="formfull formthird">
+            <input type="text" ng-model="companyDetailModel.BusinessEmailAddress" placeholder="EMAIL" class="formhalf formfull">
+            <input type="text" ng-model="companyDetailModel.BusinessPhoneNumber" placeholder="PHONE" class="formhalf formfull">
+
+            @*<input type="text" ng-model="cell" placeholder="CELL" class="formhalf formfull">
+                <input type="text" ng-model="website" placeholder="WEBSITE" class="formhalf formfull">
+                <textarea placeholder="COMPANY DETAIL" ng-model="companyDetail" class="formfull" style="resize: none; height: 246px;"></textarea>
+                <div style="text-align: left; padding-left: 1%;">
+                    <div class="formhalf formfull" style="border: 0px; float: left; padding: 14px 15px;">What kind of services does your company offer? (check all that apply)</div>
+                    <p class="formhalf formfull">
+                        <input type="checkbox" value="ABA Therapy" id="checkbox">ABA Therapy<br>
+                        <input type="checkbox" value="Speech and Language" id="checkbox">Speech and Language<br>
+                        <input type="checkbox" value="Occupational Therapy" id="checkbox">Occupational Therapy<br>
+                        <input type="checkbox" value="Physical Therapy" id="checkbox">Physical Therapy<br>
+                        <input type="checkbox" value="Diagnostic Assessments" id="checkbox">Diagnostic Assessments<br>
+                        <input type="checkbox" value="Social Skills" id="checkbox">Social Skills<br>
+                        <input type="checkbox" value="Other" id="checkbox">Other <br>
+                    </p>
+                    <div class="formhalf formfull" style="float: right; padding: 14px 15px; margin-top:-230px; margin-right:20px;"><input type="checkbox" value="Is Active" id="checkbox">Is Active </div>
+                </div>*@
+            <br />
+            <button class="add1button" ng-click="addCompany()">SUBMIT COMPANY PROFILE</button>
+            <div class="clear"></div>
+        </form>
+    </div>
+</div>
+<script>
+    $(function () {
+        
+    });
+</script>

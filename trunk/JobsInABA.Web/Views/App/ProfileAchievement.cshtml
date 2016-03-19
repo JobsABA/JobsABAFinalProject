@@ -1,0 +1,37 @@
+﻿<div id="set" class="formfull">
+    <input name="Achievement" id="Achievement" onclick="addform(this)" type="submit" value="ADD" class="addbutton addprofile">
+    <h1 style="margin-top:10px;">Achievement &amp; Award</h1>
+    <br>
+    <hr>
+    <div class="finalset">
+        <form id="Achievementform" style=" border:1px; text-align:right; display:none;">
+            <img src="assets/img/close.png" style="cursor:pointer;" onclick="hideform(this)" name="Achievement">
+            <input type="text" placeholder="Achievement name " class="formfull">
+            <input placeholder="Achievement one" type="text" id="achone" class="formfull hasDatepicker">
+            <input placeholder="Achievement two" type="text" id="achtwo" class="formfull hasDatepicker">
+            <input type="submit" value="SUBMIT" class="addbutton">
+            <script>
+                $(function () {
+                    $("#achone").datepicker();
+                });
+                $(function () {
+                    $("#achtwo").datepicker();
+                });
+            </script>
+        </form>
+    </div>
+    <div class="finalset">
+        <p class="companydata "><span class="text">Achievement name</span></p>
+        <input type="submit" name="Achievement" id="Achievement1" onclick="addform(this)" value="EDIT" class="addbutton editprofile" style="display: none;">
+        <p class="companydata "><span class="text">Start Date</span></p>
+        <p class="companydata "><span class="text">End Date</span></p>
+    </div>
+    <hr>
+    <div class="finalset" id="skillsetsave">
+        <p class="editablelabel companydata "><span class="text">Achievement name</span></p>
+        <input type="submit" name="Achievement" id="Achievement1" onclick="addform(this)" value="EDIT" class="addbutton editprofile" style="display: none;">
+        <p class="editablelabel companydata "><span class="text">Start Date</span></p>
+        <p class="editablelabel companydata "><span class="text">End Date</span></p>
+    </div>
+    <hr>
+</div>

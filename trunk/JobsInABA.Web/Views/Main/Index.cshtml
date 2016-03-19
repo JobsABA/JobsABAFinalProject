@@ -1,0 +1,769 @@
+﻿@*div class="container-fluid" ng-cloak>
+        <header class="row site-header">
+            <nav class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <h1>JobsInABA.Web Template</h1>
+                </div>
+                <div class="row">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#/home">Home</a>
+                        </li>
+                        <li>
+                            <a href="#/todomanager">Todo Manager</a>
+                        </li>
+                        <li ng-show="loggedIn">
+                            <a href="" ng-click="logout()">{{username}} | Sign Out</a>
+                        </li>
+                        <li ng-hide="loggedIn">
+                            <a href="#/signin">Sign In</a>
+                        </li>
+                        <li ng-hide="loggedIn">
+                            <a href="#/register">Register</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </header>
+
+        <div class="row site-body">
+            <div class="col-md-10 col-md-offset-1" ng-view>
+            </div>
+        </div>
+
+        <div class="row site-footer">
+            <div class="col-md-10 col-md-offset-1">
+                <footer>
+                    <div class="text-right">
+                        Your Footer Here
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>*@
+@{
+    ViewBag.Title = "Title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*@Scripts.Render("~/jquery")
+    @Scripts.Render("~/angular")
+    @Scripts.Render("~/bootstrap")*@
+@*<script src="~/Scripts/jquery-2.2.0.js"></script>
+    <link href="~/Assets/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-ui.js"></script>
+
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/App/Module.js"></script>
+    <script src="~/Scripts/App/Services.js"></script>
+    <script src="~/Scripts/App/HomeController.js"></script>
+    <script src="~/Scripts/App/RegisterController.js"></script>
+    <script src="~/Scripts/App/SignInController.js"></script>*@
+<div>
+    <div id="top-wrapper" class="wrapper">
+        <div class="pagewidth">
+            <div style="display:inline-block; ">
+                <h2>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium </h2>
+            </div>
+            <div style="display: inline-block; vertical-align: middle;">
+                <div class="auth">
+                    <a href="/register" id="register">REGISTER</a>
+                    <a href="/login" id="login">LOGIN</a>
+                    <a href="/personprofile" id="login">PROFILE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="wrapper" style="padding-top: 25px;">
+        <div class="pagewidth">
+            <a href="index.html"><img class="logo" src="assets/img/logo.png" /></a>
+            <nav class="navigation">
+                <ul class="clearfix">
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/abaServiceProvide">ABA SERVICE PROVIDERS</a></li>
+                    <li><a href="/jobsInAba">JOBS IN ABA</a></li>
+                    <li><a href="javascript:void(0)">PARENT CORNER</a></li>
+                    <li><a href="javascript:void(0)">BLOG</a></li>
+                    <li><a href="javascript:void(0)">RESOURCES</a></li>
+                    <li><a href="javascript:void(0)">ABOUT US</a></li>
+                    <li><a href="javascript:void(0)">CONTACT</a></li>
+                </ul>
+                <a href="#" id="pull">Menu</a>
+            </nav>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="post-job-wrapper" class="wrapper">
+        <div style="margin-top: 40px;">&nbsp;</div>
+        <div class="pagewidth" style=" max-width:1180px; padding:10px;">
+            <div style="float:right;">
+                <dropdown>
+                    <input id="toggle2" type="checkbox">
+                    <label for="toggle2" class="animate">Edit</label>
+                    <ul class="animate" style="top: 54px !important;">
+                        @*<li class="animate"><a href="viewcompanyprofile">Profile</a></li>
+                            <li class="animate"><a href="companyprofile">Manage Company</a></li>
+                            <li class="animate"><a href="createjob">Post job application</a></li>
+                            <li class="animate"><a href="orderList">Order list</a></li>
+                            <li class="animate"><a href="publishjob">Job application list</a></li>*@
+                        <li class="animate"><a href="/viewcompanyprofile">View Company</a></li>
+                        <li class="animate"><a href="/companyprofile">Edit Company Profile</a></li>
+                        <li class="animate"><a href="/publishjob">Job Application</a></li>
+                        <li class="animate"><a href="/orderList">Payment Detail</a></li>
+                    </ul>
+                </dropdown>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div ng-view>
+    <div class="HomeController">
+        <div id="slider-wrapper" class="wrapper" data-cycle-timeout=3000 data-cycle-speed="1000" data-cycle-slides="> .slide">
+            <div class="slide" style="background-image: url('assets/img/slider_19201.png'); ">
+                <div class="pagewidth">
+                    <div class="slider ">
+                        <h1>JOBS IN<span> ABA</span></h1>
+                        <p><span>Sed ut perspiciatis unde omnis</span> iste natus error sit oluptatem accusantium doloremque laudantium</p>
+                    </div>
+                    <div class="search-box">
+                        <h1>SEARCH JOB IN <span> ABA</span></h1>
+                        <form>
+                            <input type="text" placeholder="Keywords" id="box1">
+                            <input type="text" placeholder="Location" id="box2">
+                            <input type="submit" value="SEARCH JOBS" id="btn-search">
+                        </form>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('assets/img/slider_1920.png'); ">
+                <div class="pagewidth">
+                    <div class="slider">
+                        <h1>JOBS IN<span> ABA</span></h1>
+                        <p><span>Lorem ipsum, sed ut perspiciatis unde omnis</span> iste natus error sit oluptatem accusantium doloremque laudantium</p>
+                    </div>
+                    <div class="search-box">
+                        <h1>SEARCH JOB IN <span> ABA</span></h1>
+                        <form>
+                            <input type="text" placeholder="Keywords" id="box1">
+                            <input type="text" placeholder="Location" id="box2">
+                            <input type="submit" value="SEARCH JOBS" id="btn-search">
+                        </form>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        @*<script src="~/Scripts/jquery-2.2.0.min.js"></script>
+            <script>
+                $(function () {
+                    $('#slider-wrapper').cycle({
+
+                    });
+                });
+            </script>*@
+        <div id="middle-wrapper" class="wrapper">
+            <div class="pagewidth">
+                <ul>
+                    <li>
+                        <img src="assets/img/icon1.png">
+                        <h1>Brand</h1>   <span>BRAND your business</span><br /><br />
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+                    </li>
+                    <li>
+                        <img src="assets/img/icon2.png">
+                        <h1>Recruit</h1> <span>RECRUIT a brilliant team</span><br /><br />
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+                    </li>
+                    <li>
+                        <img src="assets/img/icon3.png">
+                        <h1>Educate</h1> <span>EDUCATE families on your service offerings.</span><br /><br />
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="new-jobs-wrapper" class="wrapper new-job">
+            <div class="pagewidth">
+                <div class="headerback">
+                    <h1>JOBS  <span>in ABA</span></h1>
+                    <h2>/</h2>
+                    <p>Sed ut perspiciatis unde omnis iste <span>natus error sit voluptatem accusantium doloremque laudantium</span></p>
+                    <a href="" id="view">View all</a>
+                </div>
+                <ul>
+                    <li style=" animation-delay: 0.1s;">
+                        <img src="assets/img/job1.jpg">
+                        <div class="box">
+                            <h1>MATHS TEACHER</h1>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                            <div class="bottom">
+                                <a href="">APPLY</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li style=" animation-delay: 0.3s;">
+                        <img src="assets/img/job2.jpg">
+                        <div class="box">
+                            <h1>SPORTS TEACHER</h1>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                            <div class="bottom">
+                                <a href="">APPLY</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li style=" animation-delay: 0.5s;">
+                        <img src="assets/img/job3.jpg">
+                        <div class="box">
+                            <h1>DOCTOR</h1>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                            <div class="bottom">
+                                <a href="">APPLY</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="assets/img/job4.jpg">
+                        <div class="box">
+                            <h1>COMPUTER EXPERT</h1>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                            <div class="bottom">
+                                <a href="">APPLY</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <img src="assets/img/job1.jpg">
+                        <div class="box">
+                            <h1>MATHS TEACHER</h1>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                            <div class="bottom">
+                                <a href="">APPLY</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="assets/img/job2.jpg">
+                        <div class="box">
+                            <h1>SPORTS TEACHER</h1>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                            <div class="bottom">
+                                <a href="">APPLY</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="assets/img/job3.jpg">
+                        <div class="box">
+                            <h1>DOCTOR</h1>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                            <div class="bottom">
+                                <a href="">APPLY</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="assets/img/job4.jpg">
+                        <div class="box">
+                            <h1>COMPUTER EXPERT</h1>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                            <div class="bottom">
+                                <a href="">APPLY</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="trust-wrapper" class="wrapper">
+            <div class="pagewidth">
+                <div class="box">
+                    <h1 style=" margin: 40px; padding: 10px;">WHY  <span>Jobs in ABA</span></h1>
+                    <h2>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,</h2>
+                    <div class="border"></div>
+                    <ul>
+                        <li>
+                            <div class="disc"><div class="icon1"></div></div>
+                            <div class="description">
+                                <h1>Search dream jobs</h1>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="disc"><div class="icon3"></div></div>
+                            <div class="description">
+                                <h1>View company profile</h1>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="disc"><div class="icon4"></div></div>
+                            <div class="description">
+                                <h1>MATCHED TO YOUR NEEDS</h1>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="disc"><div class="icon2"></div></div>
+                            <div class="description">
+                                <h1>Learn form the best</h1>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="content-wrapper" class="wrapper" style="padding-top: 60px;">
+            <div class="pagewidth">
+                <div class="headerback" style=" color: rgb(254, 90, 0); background-color: rgb(30, 38, 90);">
+                    <h1 style="font-size: 30px; font-weight: 300;">Recent  <span>job Post</span></h1>
+                </div>
+                <div class="clear"></div>
+                <div class="right-side" style="width:100%;">
+                    <ul>
+                        <li>
+                            <div class="box">
+                                <img src="assets/img/job3.jpg" id="photo">
+                                <div class="top">
+                                    <h1>Doctor</h1>
+                                    <p>Sed ut perspiciatis unde omnis istenatus error sit voluptatem accusantium</p>
+                                    <div class="date">INDIA</div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="clear"></div>
+                                    <p class="time">FULL<span>TIME</span></p>
+                                    <p class="sale">12<span>Month</span></p>
+                                    <a href="" class="apply">APPLY</a>
+                                    <a href="" class="view-more">COMPANY NAME</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <img src="assets/img/job3.jpg" id="photo">
+                                <div class="top">
+                                    <h1>Maths Teacher</h1>
+                                    <p>Sed ut perspiciatis unde omnis istenatus error sit voluptatem accusantium</p>
+                                    <div class="date">India</div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="clear"></div>
+                                    <p class="time">FULL<span>TIME + OVERTIME</span></p>
+                                    <p class="sale">$7.99<span>/Hour</span></p>
+                                    <a href="" class="apply">APPLY</a>
+                                    <a href="" class="view-more">COMPANY NAME</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <img src="assets/img/job3.jpg" id="photo">
+                                <div class="top">
+                                    <h1>Computer Expert</h1>
+                                    <p>Sed ut perspiciatis unde omnis istenatus error sit voluptatem accusantium</p>
+                                    <div class="date">India</div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="clear"></div>
+                                    <p class="time">FULL<span>TIME</span></p>
+                                    <p class="sale">$7.99<span>/Hour</span></p>
+                                    <a href="" class="apply">APPLY</a>
+                                    <a href="" class="view-more">COMPANY NAME</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <img src="assets/img/job3.jpg" id="photo">
+                                <div class="top">
+                                    <h1>Computer Teacher</h1>
+                                    <p>Sed ut perspiciatis unde omnis istenatus error sit voluptatem accusantium</p>
+                                    <div class="date">India</div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="clear"></div>
+                                    <p class="time">HALF<span>TIME</span></p>
+                                    <p class="sale">$7.99<span>/Hour</span></p>
+                                    <a href="" class="apply">APPLY</a>
+                                    <a href="" class="view-more">COMPANY NAME</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="box">
+                                <img src="assets/img/job3.jpg" id="photo">
+                                <div class="top">
+                                    <h1>Maths Teacher</h1>
+                                    <p>Sed ut perspiciatis unde omnis istenatus error sit voluptatem accusantium</p>
+                                    <div class="date">India</div>
+                                </div>
+                                <div class="bottom">
+                                    <div class="clear"></div>
+                                    <p class="time">FULL<span>TIME + OVERTIME</span></p>
+                                    <p class="sale">$17.99<span>/Hour</span></p>
+                                    <a href="" class="apply">APPLY</a>
+                                    <a href="" class="view-more">COMPANY NAME</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+                <ul class="nav">
+                    <li><div class="arrow-back"></div></li>
+                    <li><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><div class="arrow-forward"></div></li>
+                </ul>
+            </div>
+        </div>
+        <div id="about-us-wrapper" class="wrapper">
+            <div class="pagewidth">
+                <h1>Testimonial</h1>
+                <div class="underline"></div>
+                <div class="rectangle"><div class="previous_arrow"></div></div>
+                <ul id="about-slider" data-next="#about-us-wrapper .rectangle .next_arrow" data-cycle-carousel-slide-dimension=95% data-prev="#about-us-wrapper .rectangle .previous_arrow" data-cycle-fx=carousel data-cycle-timeout=3000 data-cycle-speed="1000" data-cycle-slides="> li" data-cycle-carousel-visible=2>
+                    <li>
+                        <img src="assets/img/worker1.png" class="photo">
+                        <h1>ANNA NOVAK</h1>
+                        <h2>Pricipal of PP SAVANI </h2>
+                        <p><span>Sed ut perspiciatis unde omnis iste</span><br />natus error sit voluptatem accusantium doloremque laudantium</p>
+                    </li>
+                    <li>
+                        <img src="assets/img/worker2.png" class="photo">
+                        <h1>ADAM KOWALSKI</h1>
+                        <h2>Pricipal of PP SAVANI</h2>
+                        <p><span>Sed ut perspiciatis unde omnis iste</span><br />natus error sit voluptatem accusantium doloremque laudantium</p>
+                    </li>
+                </ul>
+                <div class="rectangle" id="next"><div class="next_arrow"></div></div>
+                @*<script>
+                        $(function () {
+                            $('#about-slider').cycle({
+
+                            });
+                        });
+                    </script>*@
+            </div>
+        </div>
+        <div id="award-wrapper" class="wrapper">
+            <div class="pagewidth">
+                <ul>
+                    <li>
+                        <center>
+                            <img style="max-width: 100%; height: 160px;" src="assets/img/joboffer.jpg">
+                            <h1>182 000 <span>jobs offer</span></h1>
+                            <p>Sed ut perspiciatis unde omnis iste natus error</p>
+                        </center>
+                    </li>
+                    <li>
+                        <center>
+                            <img style="max-width: 100%; height: 160px;" src="assets/img/company.jpg">
+                            <h1>7 500 <span>registered companies</span></h1>
+                            <p>Sed ut perspiciatis unde omnis iste natus error</p>
+                        </center>
+                    </li>
+                    <li>
+                        <center>
+                            <img style="max-width: 100%; height: 160px;" src="assets/img/satisfied.jpg">
+                            <h1>15 500 <span>satisfied customers</span></h1>
+                            <p>Sed ut perspiciatis unde omnis iste natus error</p>
+                        </center>
+                    </li>
+                    <li>
+                        <center>
+                            <img style="max-width: 100%; height: 160px;" src="assets/img/joboffer.jpg">
+                            <h1>2 500 <span>job categories</span></h1>
+                            <p>Sed ut perspiciatis unde omnis iste natus error</p>
+                        </center>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="advertising">
+            <h1 style="font-size: 30px;margin-left: 30px;font-weight: 400;color: #fe5a00;">ADVERTISING <span>PACKAGES</span></h1>
+            <div class="box active-tab" style="margin-top: 0px; border: 0px none;">
+                <div class="pricing formfull formthird">
+                    <div class="thumbnail infinite">
+                        Basic
+                    </div>
+                    <div class="title">
+                        $69 per year <br>-<br> $10 per month
+                    </div>
+                    <div class="content" style="display: block;">
+                        <ul>
+                            <li>
+                                Complete Access
+                            </li>
+                            <li>
+                                Perpetual Updates
+                            </li>
+                            <li>
+                                Premium Technical Support
+                            </li>
+                            <li>
+                                Layered Photoshop Files
+                            </li>
+                        </ul>
+                        <a href="#">Buy Monthly</a><a href="#">Buy Annual</a>
+                    </div>
+                </div>
+                <div class="pricing formfull formthird">
+                    <div class="thumbnail infinite">
+                        Premium
+                    </div>
+                    <div class="title">
+                        $119 per year <br>-<br> $15 per month
+                    </div>
+                    <div class="content" style="display: block;">
+                        <ul>
+                            <li>
+                                Complete Access
+                            </li>
+                            <li>
+                                Perpetual Updates
+                            </li>
+                            <li>
+                                Premium Technical Support
+                            </li>
+                            <li>
+                                Layered Photoshop Files
+                            </li>
+                        </ul>
+                        <a href="#">Buy Monthly</a><a href="#">Buy Annual</a>
+                    </div>
+                </div>
+                <div class="pricing formfull formthird">
+                    <div class="thumbnail infinite">
+                        Deluxe
+                    </div>
+                    <div class="title">
+                        $169 per year <br>-<br> $25 per month
+                    </div>
+                    <div class="content" style="display: block;">
+                        <ul>
+                            <li>
+                                Complete Access
+                            </li>
+                            <li>
+                                Perpetual Updates
+                            </li>
+                            <li>
+                                Premium Technical Support
+                            </li>
+                            <li>
+                                Layered Photoshop Files
+                            </li>
+                        </ul>
+                        <a href="#">Buy Monthly</a><a href="#">Buy Annual</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="award-wrapper" class="wrapper">
+            <div id="button"><a href="">Subscription PLan</a></div>
+        </div>
+    </div>
+</div>
+
+
+<a href="#0" class="cd-top">Top</a>
+<div id="footer-wrapper" class="wrapper">
+    <div class="pagewidth">
+        <div class="top">
+            <div class="left-side">
+                <ul class="main">
+                    <li>
+                        <h1>Information</h1>
+                        <ul>
+                            <li><a href="">job search basics</a></li>
+                            <li><a href="">Job applications</a></li>
+                            <li><a href="">Best sites for job listings</a></li>
+                            <li><a href="">Cover letter tips & examplse</a></li>
+                            <li><a href="">Resume tips & examples</a></li>
+                            <li><a href="">Interview questions & advice</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h1>NEED TO KNOW</h1>
+                        <ul>
+                            <li><a href="">How to get a new job fast</a></li>
+                            <li><a href="">best way to apply for jobs online</a></li>
+                            <li><a href="">interview questions & answers</a></li>
+                            <li><a href="">resume & cover letter samples</a></li>
+                            <li><a href="">how to resign from a job</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h1>NEWSLETTER</h1>
+                        <form>
+                            <input type="text" placeholder="E-MAIL">
+                            <div id="send"><div class="icon-form"></div></div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="right-side">
+                <div class="header">
+                    <div class="backgroundtitle">
+                        <div><h1>jobs in<span> aba</span></h1></div>
+                        <div> <p class="slash">/</p></div>
+                        <div> <h2>contact</h2></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <ul>
+                    <li>
+                        <p class="title">jobs in aba</p>
+                        <p>surat</p>
+                        <p>india</p>
+                    </li>
+                    <li>
+                        <p>+91 <span>1234567897</span></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="bottom" style=" background-color:#1E265A;min-height: 48px;margin-bottom: 0px;color: #fff;">
+        <div class="pagewidth">
+            <ul class="list1">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="">SUPPORT</a></li>
+                <li><a href="termsandconditions.html">TERMS & CONDITIONS</a></li>
+                <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+            <div class="copyright">
+                <p>copyright 2015- all rights reserved</p>
+            </div>
+            <ul class="list2">
+                <li><div class="twitter"></div></li>
+                <li><div class="facebook"></div></li>
+                <li><div class="in"></div></li>
+                <li><div class="insta"></div></li>
+                <li><div class="youtube"></div></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    var $animation_elements = $('#middle-wrapper ul li');
+    var $window = $(window);
+    $(function () {
+        
+        $('#slider-wrapper').cycle();
+        $('#about-slider').cycle();
+    });
+    
+    function check_if_in_view() {
+        var window_height = $window.height();
+        var window_top_position = $window.scrollTop();
+        var window_bottom_position = (window_top_position + window_height);
+
+        $.each($animation_elements, function () {
+            var $element = $(this);
+            var element_height = $element.outerHeight();
+            var element_top_position = $element.offset().top;
+            var element_bottom_position = (element_top_position + element_height);
+
+            //check to see if this current container is within viewport
+            if ((element_bottom_position >= window_top_position) &&
+              (element_top_position <= window_bottom_position)) {
+                $element.addClass('in-view');
+            } else {
+                $element.removeClass('in-view');
+            }
+        });
+    }
+
+    $window.on('scroll resize', check_if_in_view);
+    $window.trigger('scroll');
+    $(function () {
+        var pull = $('#pull');
+        menu = $('.navigation ul');
+        menuHeight = menu.height();
+
+        $(pull).on('click', function (e) {
+            e.preventDefault();
+            menu.slideToggle();
+        });
+
+        $(window).resize(function () {
+            var w = $(window).width();
+            if (w > 320 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+            }
+        });
+    });
+    function addform(elem) {
+        var flag = $("#flag").val();
+        if (flag == "") {
+            var id = $(elem).attr("name");
+            var id1 = elem.id;
+            $("#" + id + "form").slideDown();
+            $("#" + id1).attr("onclick", "saveform(this)");
+            $("#flag").val("add");
+        }
+    }
+    function saveform(elem) {
+        var id = $(elem).attr("name");
+        var id1 = elem.id;
+        $("#" + id + "form").slideUp();
+        $("#" + id1).attr("onclick", "addform(this)");
+        $("#flag").val("");
+    }
+    function hideform(elem) {
+        var id = $(elem).attr("name");
+        var id1 = elem.id;
+        $("#" + id + "form").slideUp();
+        var flag = $("#flag").val();
+        if (flag == 'add') {
+            $("#" + id1).attr("onclick", "addform(this)");
+        }
+        else if (flag == 'edit') {
+            $("#" + id1).attr("onclick", "editform(this)");
+        }
+        $("#flag").val("");
+    }
+    function editform(elem) {
+        var flag = $("#flag").val();
+        if (flag == "") {
+            var id = $(elem).attr("name");
+            var id1 = elem.id;
+            $("#" + id + "form").slideDown();
+            $("#" + id1).attr("onclick", "updateform(this)");
+            $("#flag").val("edit");
+        }
+    }
+    function updateform(elem) {
+        var id = $(elem).attr("name");
+        var id1 = elem.id;
+        $("#" + id + "form").slideUp();
+        $("#" + id1).attr("onclick", "editform(this)");
+        $("#flag").val("");
+    }
+    function editformtag(elem) {
+        var id = $(elem).attr("name");
+        var id1 = elem.id;
+        $("#" + id + "form").slideDown();
+
+    }
+
+</script>

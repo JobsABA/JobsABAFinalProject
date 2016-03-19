@@ -1,0 +1,214 @@
+﻿@{
+    ViewBag.Title = "Title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*@Scripts.Render("~/jquery")
+    @Scripts.Render("~/angular")
+    @Scripts.Render("~/bootstrap")*@
+
+<script src="~/Scripts/jquery-2.2.0.js"></script>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+<script src="~/Scripts/App/Module.js"></script>
+<script src="~/Scripts/App/Services.js"></script>
+<script src="~/Scripts/App/HomeController.js"></script>
+<script src="~/Scripts/App/RegisterController.js"></script>
+<script src="~/Scripts/App/SignInController.js"></script>
+<script src="~/Scripts/App/PersonProfileController.js"></script>
+<div>
+    <div id="top-wrapper" class="wrapper">
+        <div class="pagewidth">
+            <div style="display:inline-block; ">
+                <h2>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium </h2>
+            </div>
+            <div style="display: inline-block; vertical-align: middle;">
+                <div class="auth">
+                    <a href="register" id="register">REGISTER</a>
+                    <a href="login" id="login">LOGIN</a>
+                    <a href="personprofile" id="login">PROFILE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="wrapper" style="padding-top: 25px;">
+        <div class="pagewidth">
+            <a href="index.html"><img class="logo" src="assets/img/logo.png" /></a>
+            <nav class="navigation">
+                <ul class="clearfix">
+                    <li><a href="javascript:void(0)">HOME</a></li>
+                    <li><a href="javascript:void(0)">ABA SERVICE PROVIDERS</a></li>
+                    <li><a href="javascript:void(0)">JOBS IN ABA</a></li>
+                    <li><a href="javascript:void(0)">PARENT CORNER</a></li>
+                    <li><a href="javascript:void(0)">BLOG</a></li>
+                    <li><a href="javascript:void(0)">RESOURCES</a></li>
+                    <li><a href="javascript:void(0)">ABOUT US</a></li>
+                    <li><a href="javascript:void(0)">CONTACT</a></li>
+                </ul>
+                <a href="#" id="pull">Menu</a>
+            </nav>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+<div id="post-job-wrapper" class="wrapper">
+    <div class="pagewidth">
+        <div id="post-job-wrapper1" class="wrapper">
+            <div class="pagewidth">
+                <center>
+                    <div class="right-side" style="float: none;">
+                        <div class="box">
+                            <h1>REGISTRATION</h1>
+                            <h2 ng-model="message"></h2>
+                            <form action="/Account/Register" method="post">
+                                <input type="text" placeholder="FIRST NAME" class="formhalf formfull">
+                                <input type="text" placeholder="LAST NAME" class="formhalf formfull">
+                                <input type="password" placeholder="PASSWORD" class="formhalf formfull">
+                                <input type="password" placeholder="CONFIRM PASSWORD" class="formhalf formfull">
+                                <input type="text" placeholder="USERNAME (EMAIL)" class="formfull">
+                                <input type="text" placeholder="CITY" class="formfull formthird">
+                                <input type="text" placeholder="STATE" class="formfull formthird">
+                                <span style="color:red" ng-show="state.$dirty && myForm.user.$invalid">
+                                    <span ng-show="state.$error.required">State is required.</span>
+                                </span>
+                                <input type="text" ng-model="zip" placeholder="ZIP" class="formfull formthird">
+                                <span style="color:red" ng-show="zip.$dirty && myForm.user.$invalid">
+                                    <span ng-show="zip.$error.required">Zip is required.</span>
+                                </span>
+                                <div style="text-align: left; padding-left: 1%;">
+                                    <span class="formhalf formfull" style="border: 0px; padding: 14px 0px;">HIGHEST LEVEL OF EDUCATION COMPLETED</span>
+                                    <select class="formhalf formfull" ng-model="highestLevelOfEducation">
+                                        <option>High School Diploma/GED</option>
+                                        <option>Some College</option>
+                                        <option>Associate Degree</option>
+                                        <option>Bachelor Degree</option>
+                                        <option>Master Degree</option>
+                                        <option>Doctoral Degree</option>
+                                        <option>Juris Doctorate</option>
+                                        <option>Medical Degree</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div style="text-align: left; padding-left: 1%;">
+                                    <span class="formhalf formfull" style="border: 0px; padding: 14px 0px;">HOW DID YOU FIND JOBSINABA.COM?</span>
+                                    <select class="formhalf formfull" ng-model="howDidYouFindABA">
+                                        <option>Search Engine</option>
+                                        <option>JobsInABA.com User</option>
+                                        <option>Link on another Website</option>
+                                        <option>From a Friend</option>
+                                        <option>Other </option>
+                                    </select>
+                                </div>
+                                <div style="text-align: left; padding-left: 1%;">
+                                    <span class="formhalf formfull" style="border: 0px; float: left; padding: 14px 0px;">WHICH OF THESE SOCIAL MEDIA SITES DO YOU USE?</span>
+                                    <p class="formhalf formfull" ng-model="whichOfTheSocialMediaUse">
+                                        <input type="checkbox" value="ACCEPT THE RULES" id="checkbox">Facebook<br>
+                                        <input type="checkbox" value="ACCEPT THE RULES" id="checkbox">Twitter<br>
+                                        <input type="checkbox" value="ACCEPT THE RULES" id="checkbox">LinkedIn<br>
+                                        <input type="checkbox" value="ACCEPT THE RULES" id="checkbox">Instagram<br>
+                                        <input type="checkbox" value="ACCEPT THE RULES" id="checkbox">Pinterest<br>
+                                        <input type="checkbox" value="ACCEPT THE RULES" id="checkbox">Other <br>
+                                    </p>
+                                </div>
+                                <button ng-click="register()" class="add1button">REGISTER</button>
+                                <div class="clear"></div>
+                            </form>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <a href="#0" class="cd-top">Top</a>
+    <div id="footer-wrapper" class="wrapper">
+        <div class="pagewidth">
+            <div class="top">
+                <div class="left-side">
+                    <ul class="main">
+                        <li>
+                            <h1>Information</h1>
+                            <ul>
+                                <li><a href="">job search basics</a></li>
+                                <li><a href="">Job applications</a></li>
+                                <li><a href="">Best sites for job listings</a></li>
+                                <li><a href="">Cover letter tips & examplse</a></li>
+                                <li><a href="">Resume tips & examples</a></li>
+                                <li><a href="">Interview questions & advice</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h1>NEED TO KNOW</h1>
+                            <ul>
+                                <li><a href="">How to get a new job fast</a></li>
+                                <li><a href="">best way to apply for jobs online</a></li>
+                                <li><a href="">interview questions & answers</a></li>
+                                <li><a href="">resume & cover letter samples</a></li>
+                                <li><a href="">how to resign from a job</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h1>NEWSLETTER</h1>
+
+                            <form>
+                                <input type="text" placeholder="E-MAIL">
+                                <div id="send"><div class="icon-form"></div></div>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-side">
+                    <div class="header">
+                        <div class="backgroundtitle">
+                            <div><h1>jobs in<span> aba</span></h1></div>
+                            <div> <p class="slash">/</p></div>
+                            <div> <h2>contact</h2></div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <ul>
+                        <li>
+                            <p class="title">jobs in aba</p>
+                            <p>surat</p>
+                            <p>india</p>
+                        </li>
+                        <li>
+                            <p>+91 <span>1234567897</span></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+        <div class="bottom" style=" background-color:#1E265A;min-height: 48px;margin-bottom: 0px;color: #fff;">
+            <div class="pagewidth">
+                <ul class="list1">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="">SUPPORT</a></li>
+                    <li><a href="termsandconditions.html">TERMS & CONDITIONS</a></li>
+                    <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+                <div class="copyright">
+                    <p>copyright 2015- all rights reserved</p>
+                </div>
+                <ul class="list2">
+                    <li><div class="twitter"></div></li>
+                    <li><div class="facebook"></div></li>
+                    <li><div class="in"></div></li>
+                    <li><div class="insta"></div></li>
+                    <li><div class="youtube"></div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

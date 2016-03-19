@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Jobs in ABA</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css' />
+    @*<link href="assets/styles/Reset.css" rel="stylesheet" type="text/css" />
+    <link href="assets/styles/base.css" rel="stylesheet" type="text/css" />
+    <link href="assets/styles/menu.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/Assets/styles/base.css" rel="stylesheet" />
+    <link href="~/Assets/styles/menu.css" rel="stylesheet" />
+    <link href="~/Assets/styles/Reset.css" rel="stylesheet" />
+    <link href="~/Assets/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Assets/loading-bar.min.css" rel="stylesheet" />
+    <link href="~/Assets/toastr.min.css" rel="stylesheet" />
+
+
+
+    <script src="~/Scripts/jquery-2.2.0.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/loading-bar.min.js"></script>
+    <script src="~/Assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/Assets/plugins/jquery.cycle2.min.js"></script>
+    <script src="~/Assets/plugins/jquery.cycle2.carousel.min.js"></script>
+    <script src="~/Scripts/toastr.min.js"></script>
+
+    <script src="~/Scripts/App/Module.js"></script>
+    <script src="~/Scripts/App/Services.js"></script>
+    <script src="~/Scripts/App/HomeController.js"></script>
+    <script src="~/Scripts/App/RegisterController.js"></script>
+    <script src="~/Scripts/App/SignInController.js"></script>
+    <script src="~/Scripts/App/PersonProfileController.js"></script>
+    <script src="~/Scripts/App/CompanyProfileController.js"></script>
+    <script src="~/Scripts/App/JobsController.js"></script>
+    <script src="~/Scripts/App/OrderListController.js"></script>
+    <script src="~/Scripts/App/AdPackageController.js"></script>
+    <script src="~/Scripts/App/ABAServiceProvideController.js"></script>
+    <script src="~/Scripts/App/JobsInABAListController.js"></script>
+    
+    <style>
+    #loading-bar .bar {
+        background: #FE5500 !important;
+    }
+    #loading-bar-spinner .spinner-icon {
+        border-top-color: #FE5500 !important;
+        border-left-color: #1F2A5D !important;
+    }
+</style>
+    
+</head>
+<body data-ng-app="myApp">
+    @*<div>
+            <div id="top-wrapper" class="wrapper">
+                <div class="pagewidth">
+                    <div style="display:inline-block; ">
+                        <h2>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium </h2>
+                    </div>
+                    <div style="display: inline-block; vertical-align: middle;">
+                        <div class="auth">
+                            <a href="register" id="register">REGISTER</a>
+                            <a href="login" id="login">LOGIN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="wrapper" style="padding-top: 25px;">
+                <div class="pagewidth">
+                    <a href="index.html"><img class="logo" src="assets/img/logo.png" /></a>
+                    <nav class="navigation">
+                        <ul class="clearfix">
+                            <li><a href="javascript:void(0)">HOME</a></li>
+                            <li><a href="javascript:void(0)">ABA SERVICE PROVIDERS</a></li>
+                            <li><a href="javascript:void(0)">JOBS IN ABA</a></li>
+                            <li><a href="javascript:void(0)">PARENT CORNER</a></li>
+                            <li><a href="javascript:void(0)">BLOG</a></li>
+                            <li><a href="javascript:void(0)">RESOURCES</a></li>
+                            <li><a href="javascript:void(0)">ABOUT US</a></li>
+                            <li><a href="javascript:void(0)">CONTACT</a></li>
+                        </ul>
+                        <a href="#" id="pull">Menu</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>*@
+    <div>
+        @RenderBody()
+    </div>
+    @*<div>
+            <a href="#0" class="cd-top">Top</a>
+            <div id="footer-wrapper" class="wrapper">
+                <div class="pagewidth">
+                    <div class="top">
+                        <div class="left-side">
+                            <ul class="main">
+                                <li>
+                                    <h1>Information</h1>
+                                    <ul>
+                                        <li><a href="">job search basics</a></li>
+                                        <li><a href="">Job applications</a></li>
+                                        <li><a href="">Best sites for job listings</a></li>
+                                        <li><a href="">Cover letter tips & examplse</a></li>
+                                        <li><a href="">Resume tips & examples</a></li>
+                                        <li><a href="">Interview questions & advice</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h1>NEED TO KNOW</h1>
+                                    <ul>
+                                        <li><a href="">How to get a new job fast</a></li>
+                                        <li><a href="">best way to apply for jobs online</a></li>
+                                        <li><a href="">interview questions & answers</a></li>
+                                        <li><a href="">resume & cover letter samples</a></li>
+                                        <li><a href="">how to resign from a job</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h1>NEWSLETTER</h1>
+
+                                    <form>
+                                        <input type="text" placeholder="E-MAIL">
+                                        <div id="send"><div class="icon-form"></div></div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="right-side">
+                            <div class="header">
+                                <div class="backgroundtitle">
+                                    <div><h1>jobs in<span> aba</span></h1></div>
+                                    <div> <p class="slash">/</p></div>
+                                    <div> <h2>contact</h2></div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <ul>
+                                <li>
+                                    <p class="title">jobs in aba</p>
+                                    <p>surat</p>
+                                    <p>india</p>
+                                </li>
+                                <li>
+                                    <p>+91 <span>1234567897</span></p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="clear"></div>
+                </div>
+                <div class="bottom" style=" background-color:#1E265A;min-height: 48px;margin-bottom: 0px;color: #fff;">
+                    <div class="pagewidth">
+                        <ul class="list1">
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="">SUPPORT</a></li>
+                            <li><a href="termsandconditions.html">TERMS & CONDITIONS</a></li>
+                            <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                        </ul>
+                        <div class="copyright">
+                            <p>copyright 2015- all rights reserved</p>
+                        </div>
+                        <ul class="list2">
+                            <li><div class="twitter"></div></li>
+                            <li><div class="facebook"></div></li>
+                            <li><div class="in"></div></li>
+                            <li><div class="insta"></div></li>
+                            <li><div class="youtube"></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+
+
+    @*<script>
+            var $animation_elements = $('#middle-wrapper ul li');
+            var $window = $(window);
+
+            function check_if_in_view() {
+                var window_height = $window.height();
+                var window_top_position = $window.scrollTop();
+                var window_bottom_position = (window_top_position + window_height);
+
+                $.each($animation_elements, function () {
+                    var $element = $(this);
+                    var element_height = $element.outerHeight();
+                    var element_top_position = $element.offset().top;
+                    var element_bottom_position = (element_top_position + element_height);
+
+                    //check to see if this current container is within viewport
+                    if ((element_bottom_position >= window_top_position) &&
+                      (element_top_position <= window_bottom_position)) {
+                        $element.addClass('in-view');
+                    } else {
+                        $element.removeClass('in-view');
+                    }
+                });
+            }
+
+            $window.on('scroll resize', check_if_in_view);
+            $window.trigger('scroll');
+
+            $(function () {
+                var pull = $('#pull');
+                menu = $('.navigation ul');
+                menuHeight = menu.height();
+
+                $(pull).on('click', function (e) {
+                    e.preventDefault();
+                    menu.slideToggle();
+                });
+
+                $(window).resize(function () {
+                    var w = $(window).width();
+                    if (w > 320 && menu.is(':hidden')) {
+                        menu.removeAttr('style');
+                    }
+                });
+            });
+        </script>*@
+</body>
+</html>

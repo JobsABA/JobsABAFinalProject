@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7ab1a39de8ab4605aa95ffefeeb7f3fd" Name="Diagram1">
+        <EntityTypeShape EntityType="JobsInABA.Coponent.AddressBook.ef.Address" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobsInABA.Coponent.AddressBook.ef.BusinessAddress" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobsInABA.Coponent.AddressBook.ef.BusinessEmail" Width="1.5" PointX="7.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobsInABA.Coponent.AddressBook.ef.BusinessPhone" Width="1.5" PointX="12.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobsInABA.Coponent.AddressBook.ef.ClassType" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobsInABA.Coponent.AddressBook.ef.Country" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobsInABA.Coponent.AddressBook.ef.Email" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobsInABA.Coponent.AddressBook.ef.Phone" Width="1.5" PointX="10.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobsInABA.Coponent.AddressBook.ef.TypeCode" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobsInABA.Coponent.AddressBook.ef.UserAddress" Width="1.5" PointX="7.5" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobsInABA.Coponent.AddressBook.ef.UserEmail" Width="1.5" PointX="7.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JobsInABA.Coponent.AddressBook.ef.UserPhone" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="JobsInABA.Coponent.AddressBook.ef.FK_Address_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="JobsInABA.Coponent.AddressBook.ef.FK_Address_TypeCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="JobsInABA.Coponent.AddressBook.ef.FK_BusinessAddresses_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="JobsInABA.Coponent.AddressBook.ef.FK_Phones_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="JobsInABA.Coponent.AddressBook.ef.FK_UserAddresses_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="JobsInABA.Coponent.AddressBook.ef.FK_BusinessEmails_Emails" ManuallyRouted="false" />
+        <AssociationConnector Association="JobsInABA.Coponent.AddressBook.ef.FK_BusinessPhones_Phones" ManuallyRouted="false" />
+        <AssociationConnector Association="JobsInABA.Coponent.AddressBook.ef.FK_TypeCodes_ClassTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="JobsInABA.Coponent.AddressBook.ef.FK_Emails_TypeCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="JobsInABA.Coponent.AddressBook.ef.FK_UserEmails_Emails" ManuallyRouted="false" />
+        <AssociationConnector Association="JobsInABA.Coponent.AddressBook.ef.FK_Phones_TypeCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="JobsInABA.Coponent.AddressBook.ef.FK_UserPhones_Phones" ManuallyRouted="false" />
+        <AssociationConnector Association="JobsInABA.Coponent.AddressBook.ef.FK_TypeCodes_TypeCodes" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

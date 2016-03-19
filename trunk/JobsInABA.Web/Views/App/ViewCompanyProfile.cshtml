@@ -1,0 +1,79 @@
+﻿<div id="post-job-wrapper" class="wrapper" style="padding-top: 0px;">
+    @*<div style="margin-top: 40px;">&nbsp;</div>
+    <div class="pagewidth" style=" max-width:1180px; padding:10px;">
+        <div style="float:right;">
+            <dropdown>
+                <input id="toggle2" type="checkbox">
+                <label for="toggle2" class="animate">Edit</label>
+                <ul class="animate" style="top: 54px !important;">
+                    <li class="animate"><a href="viewcompany.html">View Company</a></li>
+                    <li class="animate"><a href="companyprofile.html">Edit Company Profile</a></li>
+                    <li class="animate"><a href="publishjob.html">Job Application</a></li>
+                    <li class="animate"><a href="payment.html">Payment Detail</a></li>
+                </ul>
+            </dropdown>
+        </div>
+    </div>*@
+    <div class="pagewidth" style=" max-width:1180px; padding:10px;">
+        <div class="left-side">
+            <div class="shadow" style="border: 1px solid rgb(234, 234, 234);">
+                <center style="margin:10px;">
+                    <img src="assets/img/logo.png" style="max-width:100%;">
+                </center>
+                <div class="boxcompany" style="border:0px none;">
+                    <h1 style="padding-top: 30px;text-align: center;color: #fe5500;">Founder-2003</h1>
+                    <br>
+                    <p class="companydata odd">6626 Catherine Street</p>
+                    <p class="companydata even">Port Jefferson Station</p>
+                    <p class="companydata odd">New york, 11776</p>
+                    <h4 style="padding-top: 30px;text-align: center;color: #fe5500;">Contact</h4>
+                    <br>
+                    <p class="companydata odd">www.vintechdreamlab.com</p>
+                    <p class="companydata even">mail@mail.com</p>
+                    <p class="companydata odd">+1234653,+12346768</p>
+                </div>
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="formfull" id="set" style="width: 95%; margin: 34px 2%;">
+                <h1 style="padding-bottom: 12px;">Warwick Ltd.</h1>
+                <p class="description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis sodales velit in interdum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam ligula quam, consequat blandit iaculis sit amet, sagittis at tortor. Donec eleifend posuere nibh ornare lobortis. Duis hendrerit mi vel eros scelerisque, quis bibendum libero sodales. Donec rutrum dui tempus odio imperdiet tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec tincidunt, augue a mattis faucibus, eros tellus condimentum nulla, at bibendum nibh nisl sit amet mi. Nullam ultricies faucibus justo non imperdiet. Morbi consequat ac elit condimentum dictum. Pellentesque pulvinar efficitur nulla, sed pharetra eros euismod at. Morbi cursus non diam congue bibendum.
+                </p>
+                <p class="description">
+                    Ut tempor viverra diam. In efficitur dapibus consequat. Praesent sed scelerisque mauris. Praesent eu pharetra justo. Nullam pulvinar iaculis faucibus. Etiam sollicitudin ex enim, eget pulvinar lacus varius nec. Aenean tincidunt erat sed tellus efficitur placerat. In vel lorem aliquet, sagittis arcu quis, aliquet erat. Phasellus pharetra enim a tempor imperdiet. Proin et hendrerit diam. Cras non neque a justo fermentum tempus. Proin orci nibh, tincidunt in elit dignissim, volutpat gravida orci. Nulla porta nisi nisi, eu interdum erat placerat ac. Nam vitae rutrum massa, a laoreet justo.
+                </p>
+                <p class="description">
+                    In hac habitasse platea dictumst. Ut sit amet congue leo. In euismod odio eu neque viverra bibendum. Phasellus feugiat, ligula quis rutrum consequat, sem ipsum commodo elit, ac fermentum neque tortor semper felis. Phasellus elementum maximus lectus, nec eleifend metus rutrum ac. Nulla ex tellus, convallis scelerisque justo ac, ullamcorper feugiat mauris. Pellentesque tincidunt fermentum dolor id feugiat. In eget neque porta, luctus metus vel, sagittis libero. Cras elementum tellus a sagittis ultricies.
+                </p>
+
+            </div>
+            <div style="display: inline-block;" class="formfull fullthird">
+                <p class="ulhead">Company Specialties</p>
+                <ul class="ulspecification">
+                    <li>luctus metus</li>
+                    <li>scelerisque</li>
+                    <li>efficitur</li>
+                    <li>adipiscing</li>
+                </ul>
+            </div>
+            <div style="display: inline-block;" class="formfull fullthird">
+                <p class="ulhead">Employee</p>
+                <ul class="ulspecification">
+                    <li>20-50</li>
+                </ul>
+            </div>
+            <div style="display: inline-block;" class="formfull fullthird">
+                <p class="ulhead">Company Achievement</p>
+                <ul class="ulspecification">
+                    <li>Company Achievement</li>
+                    <li>luctus metus</li>
+                    <li>scelerisque</li>
+                    <li>efficitur</li>
+                    <li>adipiscing</li>
+                </ul>
+            </div>
+            @{Html.RenderPartial("JobApplicationList");}
+        </div>
+    </div>
+</div>

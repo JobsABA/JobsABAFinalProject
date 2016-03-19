@@ -1,0 +1,26 @@
+﻿<div class="box formfull" id="rbox">
+    <h1 id="employee" onclick="addform(this)" style=" cursor:pointer ; margin-left: 10px; font-weight: 400; color: #fe5a00;">ADD EMPLOYEE</h1>
+    <form id="employeeform" style="display:none; text-align: right;">
+        <input style="float:left;" type="text" placeholder="EMPLOYEE NAME " ng-model="addCompanyEMPlistModel.Name" class="formfull">
+        <input type="button" value="ADD" class="addbutton" ng-click="addCompanyEmplist(addCompanyEMPlistModel)">
+        <div class="clear"></div>
+    </form>
+    <div class="top" style="padding: 26px; color:black;" ng-repeat="o in objEmplist">
+        <p ng-hide="isEditEmplist_{{o.id}}">{{o.Name}} </p>
+        <input ng-show="isEditEmplist_{{o.id}}" style="margin-top:0px;" type="text" placeholder="COMPANY SPECIALTIES " ng-model="editCompanyEMPlistModel.Name" class="formfull">
+        <a class="btn-edit" href="#" ng-show="isEditEmplist_{{o.id}}" ng-click="saveEditEMPlist(editCompanyEMPlistModel)"><img src="assets/img/save-24.png"></a>
+        <a class="btn-edit" href="#" ng-show="isEditEmplist_{{o.id}}" ng-click="cancelEditEMPlist(editCompanyEMPlistModel)"><img src="assets/img/close.png"></a>
+        <a class="btn-edit" href="#" ng-hide="isEditEmplist_{{o.id}}" ng-click="editEMPlist(o)"><img src="assets/img/edit-32.png"></a>
+        <a class="btn-delete" href="#" ng-hide="isEditEmplist_{{o.id}}" ng-click="deleteEMPlist(o.id)"><img src="assets/img/delete-32.png"></a>
+    </div>
+    @*<div class="top" style="padding: 26px; color:black;">
+        <p>EMPLOYEE NAME 2 </p>
+        <a class="btn-edit" href="#"><img src="assets/img/edit-32.png"></a>
+        <a class="btn-delete" href="#"><img src="assets/img/delete-32.png"></a>
+    </div>
+    <div class="top" style="padding: 26px; color:black;">
+        <p>EMPLOYEE NAME 3 </p>
+        <a class="btn-edit" href="#"><img src="assets/img/edit-32.png"></a>
+        <a class="btn-delete" href="#"><img src="assets/img/delete-32.png"></a>
+    </div>*@
+</div>

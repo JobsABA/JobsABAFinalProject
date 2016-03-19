@@ -1,0 +1,101 @@
+﻿<div class="left-side" ng-controller="PersonProfileController">
+    <div class="boxcompany profileimage" style="text-align: center; padding: 4px; border-top: 1px solid rgb(234, 234, 234); background-color: rgb(198, 200, 213);">
+        <img id="profileimage" src="assets/img/job1.jpg" style="max-width:100%;">
+        <input id="uploadimage" placeholder="Upload Image" style="display:none;" type="file">
+        <img src="assets/img/edit-32.png" id="profile" onclick="updateprofile()" style="visibility: visible; width: 18px; cursor: pointer; position: relative;">
+    </div>
+    <div class="boxcompany">
+        <h1 style="padding: 10px; text-align: center; color:#FE5500; padding-top: 25px;">Personal Detail</h1>
+        <p id="name" class="editablelabel companydata even"><span class="text">{{firstName}}</span><span class="text"> {{middleName}}</span><span class="text"> {{lastName}}</span></p>
+        <p id="professionalstatus" class="editablelabel companydata odd"><span class="text">Professional Status</span></p>
+        <p id="position" class="editablelabel companydata even"><span class="text">Current Position</span></p>
+        <p id="companyname" class="editablelabel companydata odd"><span class="text">Company Name</span></p>
+        <p id="service" class="editablelabel companydata even"><span class="text">Company's Services</span></p>
+        <p id="dob" class="editablelabel companydata odd"><span class="text">BirthDate</span></p>
+        <p id="maritalstatus" class="editablelabel companydata even"><span class="text">Marital Status</span></p>
+        <h1 style="padding: 10px;text-align: center;color:#FE5500;">
+            Contact Detail
+        </h1>
+        <p id="address" class="editablelabel companydata even"><span class="text">{{city}}</span><span class="text">,{{state}}</span>-<span class="text">{{zip}}</span></p>
+        <p id="email" class="editablelabel companydata odd"><span class="text">{{email}}</span></p>
+        <p id="phone" class="editablelabel companydata even"><span class="text">{{phoneNo}}</span><span class="text">   {{cell}}</span></p>
+    </div>
+</div>
+<script>
+
+    $(document).ready(function () {
+        $(".profileimage").hover(function () {
+            $("#profile").css("visibility", "visible");
+        }, function () {
+            $("#profile").css("visibility", "hidden");
+        });
+        $(".editablelabel").hover(function () {
+            var len = $(".upadateicon").length;
+            if (len == 0) {
+                var id = this.id;
+                $(this).append("<img class='editicon' onclick='editthis(this)' for='" + id + "' style='width: 18px; float: right; cursor:pointer;' src='assets/img/edit-32.png'>");
+
+            }
+        }, function () {
+            var len = $(".upadateicon").length;
+            if (len == 0) {
+            }
+            $(".editicon").remove();
+        });
+        $(".editablelist").hover(function () {
+            var len = $(".upadateicon").length;
+            if (len == 0) {
+                var id = this.id;
+
+                $(this).prepend("<img class='editicon editablelist' for='name' onclick='editthislist(this)' style='width: 18px; float: right; cursor:pointer;margin: 6px;' src='assets/img/edit-32.png'>");
+
+            }
+        }, function () {
+            var len = $(".upadateicon").length;
+            if (len == 0) {
+
+            }
+            $(".editicon").remove();
+        });
+
+    });
+
+    function editthis(elem) {
+        var id = $(elem).attr("for");
+        $("#" + id + ">.text").each(function () {
+            var value = $(this).html();
+            $(this).after("<input class='input' type='text' value='" + value + "' >");
+        });
+        $(".editicon").after("<img class='upadateicon' for='" + id + "' onclick='upadatethis(this)' style='width: 18px; float: right; cursor:pointer;' src='assets/img/save-24.png'>");
+        $(".editicon").remove();
+        $("#" + id + ">.text").hide();
+    }
+    function upadatethis(elem) {
+        var id = $(elem).attr("for");
+        var temp = 0;
+        $("#" + id + ">.text").each(function () {
+            var index = $(this).index();
+            var in1 = index + 1;
+            $(this).text($(".input").eq(temp).val())
+            temp++;
+
+        });
+        $(".upadateicon").remove();
+        $(".input").remove();
+        $("#" + id + ">.text").show();
+        $("#" + id).css("background-color", "#fff")
+    }
+    function updateprofile() {
+        $("#profileimage").hide();
+        $("#uploadimage").show();
+        $("#profile").attr("src", "assets/img/save-24.png");
+        $("#profile").attr("onclick", "uploadimage()");
+        $("#profile").attr("min-height", "120px");
+    }
+    function uploadimage() {
+        $("#profileimage").show();
+        $("#uploadimage").hide();
+        $("#profile").attr("src", "assets/img/edit-32.png");
+        $("#profile").attr("onclick", "updateprofile()");
+    }
+</script>

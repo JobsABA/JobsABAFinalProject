@@ -1,0 +1,34 @@
+﻿<div class="box formfull" id="rbox">
+    <h1 id="achivement" onclick="addform(this)" style="cursor:pointer;  margin-left: 10px; font-weight: 400; color: #fe5a00;">ADD COMPANY ACHIEVEMENT</h1>
+    <form id="achivementform" style="display:none;     text-align: right;">
+        <input style="float:left;" type="text" placeholder="ACHIEVEMENT NAME " class="formfull" ng-model="addCompanyAchievelistModel.Name">
+        <input style="float:left;" id="date" type="text" placeholder="DATE " class="formfull" ng-model="addCompanyAchievelistModel.Date">
+        <input type="file" placeholder="Upload Image" id="fupload">
+        <input type="button" value="ADD" class="addbutton" ng-click="addCompanyAchievelist(addCompanyAchievelistModel)">
+        <div class="clear"></div>
+    </form>
+    <div class="top" style="padding: 26px; color:black;" ng-repeat="o in objAchievelist">
+        <div ng-show="isEditAchievelist_{{o.id}}">
+            <input style="margin-top:0px;" type="text" placeholder="COMPANY SPECIALTIES " ng-model="editCompanyAchievelistModel.Name" class="formfull">
+            <input style="float:left;" id="date" type="text" placeholder="DATE" ng-model="editCompanyAchievelistModel.Date" class="formfull">
+            <input type="file" placeholder="Upload Image" id="file_{{o.id}}"><a href="{{o.imgUrl}}" ng-if="o.imgUrl.length>0" target="_blank">View</a>
+            <a class="btn-edit" href="#" ng-click="saveEditAchievelist(editCompanyAchievelistModel)"><img src="assets/img/save-24.png"></a>
+            <a class="btn-edit" href="#" ng-click="cancelEditAchievelist(editCompanyAchievelistModel)"><img src="assets/img/close.png"></a>
+        </div>
+        <div ng-hide="isEditAchievelist_{{o.id}}">
+            <p>{{o.Name}} </p>
+            <a class="btn-edit" href="#" ng-click="editAchievelist(o)"><img src="assets/img/edit-32.png"></a>
+            <a class="btn-delete" href="#" ng-click="deleteAchievelist(o.id)"><img src="assets/img/delete-32.png"></a>
+        </div>
+    </div>
+    @*<div class="top" style="padding: 26px; color:black;">
+            <p>ACHIEVEMENT NAME2 </p>
+            <a class="btn-edit" href="#"><img src="assets/img/edit-32.png"></a>
+            <a class="btn-delete" href="#"><img src="assets/img/delete-32.png"></a>
+        </div>
+        <div class="top" style="padding: 26px; color:black;">
+            <p>ACHIEVEMENT NAME3</p>
+            <a class="btn-edit" href="#"><img src="assets/img/edit-32.png"></a>
+            <a class="btn-delete" href="#"><img src="assets/img/delete-32.png"></a>
+        </div>*@
+</div>
