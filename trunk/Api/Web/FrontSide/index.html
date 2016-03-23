@@ -8,7 +8,8 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css' />
     <link href="Assets/styles/loading-bar.min.css" rel="stylesheet" />
     <link href="Assets/styles/toastr.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">-->
+    <link href="Assets/styles/jquery-ui.css" rel="stylesheet" />
     <link href="Assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <!--<link href="Assets/bootstrap/css/font-awesome.min.css" rel="stylesheet" />-->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -48,7 +49,8 @@
     <script src="App/Controller/ChangePassword.js"></script>
     <script src="App/Controller/ContactUsController.js"></script>
     <script src="App/Controller/CreatePassword.js"></script>
-
+    <script src="App/Controller/Payment.js"></script>
+    <script src="App/Controller/SubScription.js"></script>
 
     <script>
         $(function () {
@@ -56,9 +58,9 @@
                 changeMonth: true,
                 changeYear: true
             });
-            $(document).tooltip({
-                track: true
-            });
+            //$(document).tooltip({
+            //    track: true
+            //});
 
             //for select menu
             $("a").click(function () {
@@ -82,7 +84,7 @@
             
             
             //for scroll to top
-            $('body').append('<div id="toTop" class="btn btn-orange"><i class="fa fa-arrow-up"></i></div>');
+            $('body').append('<div id="toTop" class="btn btn-orange" style="z-index: 9999999999;"><i class="fa fa-arrow-up"></i></div>');
             $(window).scroll(function () {
                 if ($(this).scrollTop() != 0) {
                     $('#toTop').fadeIn();
@@ -123,13 +125,15 @@
                             <p class="text-center" ng-if="menuLstBusiness.length==0">No business Available</p>
                         </div>
                         <hr />
-                        <a href="#personprofile">Update Profile</a>
+                        <a href="#personprofile" ng-show="showUpdateProfile">Update Profile</a>
                         <a href="#companyprofile">Create Company Profile</a>
+                        <a href="#subscription">Subscription Plan</a>
                         <a href="#changePassword">Change Password</a>
                         <a href="javascript:0" ng-click="logOut()">LogOut</a>
                     </div>
                 </div>
-                <a href="#personprofile" style="color: #1F2A5D;">Hi, {{loginUserName}}</a>
+                <a href="#personprofile" style="color: #1F2A5D;" ng-hide="showUpdateProfile">Hi, {{loginUserName}}</a>
+                <span style="color: #1F2A5D;" ng-show="showUpdateProfile">Hi, {{loginUserName}}</span>
             </div>
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -294,5 +298,20 @@
             </div>
         </div>
     </div>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/56f2936e24c5a0b345c74734/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
 </body>
 </html>

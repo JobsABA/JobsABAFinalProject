@@ -1285,9 +1285,11 @@
     <Content Include="Web\FrontSide\App\Controller\JobsController.js" />
     <Content Include="Web\FrontSide\App\Controller\JobsInABAListController.js" />
     <Content Include="Web\FrontSide\App\Controller\OrderListController.js" />
+    <Content Include="Web\FrontSide\App\Controller\Payment.js" />
     <Content Include="Web\FrontSide\App\Controller\PersonProfileController.js" />
     <Content Include="Web\FrontSide\App\Controller\RegisterController.js" />
     <Content Include="Web\FrontSide\App\Controller\SignInController.js" />
+    <Content Include="Web\FrontSide\App\Controller\SubScription.js" />
     <Content Include="Web\FrontSide\App\Controller\VerifyRegistrationPage.js" />
     <Content Include="Web\FrontSide\App\Module.js" />
     <Content Include="Web\FrontSide\App\Services.js" />
@@ -1738,12 +1740,14 @@
     <Content Include="Web\FrontSide\Template\JobDetail.html" />
     <Content Include="Web\FrontSide\Template\JobsInABAList.html" />
     <Content Include="Web\FrontSide\Template\OrderList.html" />
+    <Content Include="Web\FrontSide\Template\Payment.html" />
     <Content Include="Web\FrontSide\Template\PersonProfile.html" />
     <Content Include="Web\FrontSide\Template\PrivacyPolicy.html" />
     <Content Include="Web\FrontSide\Template\PublishedJob.html" />
     <Content Include="Web\FrontSide\Template\Register.html" />
     <Content Include="Web\FrontSide\Template\SignIn.html" />
     <Content Include="Web\FrontSide\Template\SignInAfterVerify.html" />
+    <Content Include="Web\FrontSide\Template\SubScription.html" />
     <Content Include="Web\FrontSide\Template\TermsCondition.html" />
     <Content Include="Web\FrontSide\Template\VerifyRegisterPage.html" />
     <Content Include="Web\FrontSide\Template\ViewCompanyProfile.html" />

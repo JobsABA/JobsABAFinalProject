@@ -1,0 +1,79 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="text-center">PAYMENT</h3>
+            <hr />
+            <div class="col-lg-2">
+
+            </div>
+            <div class="col-lg-8">
+                <form role="form"
+                      id="formPayment"
+                      name="formPayment"
+                      novalidate
+                      ng-submit="formSubmit()">
+
+                    <div class="form-group col-lg-6">
+                        <input type="text" class="form-control" ng-model="paymentModel.FirstName" placeholder="First Name" ng-class="{'complusoryClass':paymentModel.FirstName=='' || paymentModel.FirstName==null}" ng-required="true">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <input type="text" class="form-control" ng-model="paymentModel.LastName" placeholder="Last Name" ng-class="{'complusoryClass':paymentModel.LastName==null || paymentModel.LastName==''}" ng-required="true">
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <input type="text" class="form-control" ng-model="paymentModel.Phone" placeholder="Phone Number" ng-class="{'complusoryClass':paymentModel.Phone==null||paymentModel.Phone==''}" ng-required="true">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <input type="text" class="form-control" ng-model="paymentModel.Email" placeholder="Email address to send receipt" ng-class="{'complusoryClass':paymentModel.Email==null || paymentModel.Email==''}" ng-required="true">
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <input type="text" class="form-control" ng-model="paymentModel.CreditCardNumber" placeholder="Credit Card Number" ng-class="{'complusoryClass':paymentModel.CreditCardNumber==null || paymentModel.CreditCardNumber==''}" ng-required="true">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <input type="text" class="form-control" ng-model="paymentModel.ExpirationDate" placeholder="Expiration Date" ng-class="{'complusoryClass':paymentModel.ExpirationDate==null || paymentModel.ExpirationDate==''}" ng-required="true">
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <input type="text" class="form-control" ng-model="paymentModel.CSCNumber" placeholder="CSC Number" maxlength="4" ng-class="{'complusoryClass':paymentModel.CSCNumber==null || paymentModel.CSCNumber==''}" ng-required="true">
+                    </div>
+                    <div class="form-group col-lg-6">
+                        <input type="text" class="form-control" ng-model="paymentModel.NameOnCard" placeholder="Name on Card" maxlength="4" ng-class="{'complusoryClass':paymentModel.NameOnCard==null || paymentModel.NameOnCard==''}" ng-required="true">
+                    </div>
+
+                    <div class="form-group col-lg-12">
+                        <input type="text" class="form-control" ng-model="paymentModel.Address" placeholder="Address" ng-class="{'complusoryClass':paymentModel.Address==null || paymentModel.Address==''}" ng-required="true">
+                    </div>
+
+                    <div class="form-group col-lg-4">
+                        <input type="text" class="form-control" ng-model="paymentModel.City" placeholder="City" ng-class="{'complusoryClass':paymentModel.City==null || paymentModel.City==''}" ng-required="true">
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <input type="text" class="form-control" ng-model="paymentModel.State" placeholder="State" ng-class="{'complusoryClass':paymentModel.State==null || paymentModel.State==''}" ng-required="true">
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <input type="text" class="form-control" ng-model="paymentModel.Zip" placeholder="Zip" ng-class="{'complusoryClass':paymentModel.Zip==null || paymentModel.Zip==''}" ng-required="true">
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <input id="T_C" type="checkbox" class="" ng-model="paymentModel.T_C" ng-class="{'complusoryClass':paymentModel.T_C==false}" ng-required="true" style="vertical-align: text-bottom;width: 20px;height: 20px;">
+                        <label for="T_C">Terms and Conditions</label>
+                    </div>
+
+                    <div class="form-group col-lg-12 text-center">
+                        <input type="button" class="btn btn-orange" ng-disabled="!formPayment.$valid" ng-click="payment()" value="Proceed to Payment" />
+                        <a class="btn btn-orange" href="#subscription">Back</a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+

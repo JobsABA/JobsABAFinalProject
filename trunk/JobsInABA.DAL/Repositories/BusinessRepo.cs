@@ -138,17 +138,19 @@ namespace JobsInABA.DAL.Repositories
             Business oBusinessReturn = null;
             if (oBusiness != null && oBusiness.BusinessID > 0)
             {
-                //using (DBContext)
-                //{
+                using (DBContext)
+                {
                     Business u = this.GetBusinessByID(oBusiness.BusinessID);
 
                     if (u != null)
                     {
+                        //DBContext.Entry(oBusiness).State = EntityState.Modified;
                         //Mapper.Map<Business, Business>(oBusiness, u);
+                        DBContext.Entry(u).CurrentValues.SetValues(oBusiness);
                         DBContext.SaveChanges();
                         oBusinessReturn = u;
                     }
-                //}
+                }
             }
 
             return oBusinessReturn;

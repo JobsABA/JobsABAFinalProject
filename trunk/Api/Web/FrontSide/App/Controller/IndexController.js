@@ -9,7 +9,7 @@
         }
         $rootScope.getFullCompanylist();
         $scope.randomNumber = Math.random();
-        $rootScope.showUpdateProfile = true;
+        $rootScope.showUpdateProfile = false;
     }
 
     $scope.initModel = function () {
@@ -53,7 +53,8 @@
     //get full company list 
     $rootScope.getFullCompanylist = function () {
         $http.get($rootScope.API_PATH + "/Businesses/GetBusinesses").success(function (data) {
-            $rootScope.fulllLstBusiness = data;
+            var lst = _.where(data, { IsActive: true });
+            $rootScope.fulllLstBusiness = lst;
         }).error(function (data) {
             console.log(JSON.stringify(data));
         });
@@ -98,6 +99,7 @@
         $('.bussinessList').autocomplete({
             source: function (request, response) {
                 var newBusinessList = [];
+                
                 if ($rootScope.fulllLstBusiness != null) {
                     for (var i = 0; i < $rootScope.fulllLstBusiness.length; i++) {
                         if ($rootScope.fulllLstBusiness[i].Name.toLowerCase().indexOf(request.term.toLowerCase()) !== -1) {
@@ -105,8 +107,14 @@
                         }
                     }
                 }
+                if (newBusinessList.length == 0) {
+                    $(".addLocationDiv").show();
+                }
+                else {
+                    $(".addLocationDiv").hide();
+                }
                 response($.map(newBusinessList, function (value, key) {
-                    
+
                     return {
                         label: value.Name,
                         value: value.Name,
@@ -117,9 +125,9 @@
             select: function (event, ui) {
                 $(".bussinessList_ID").val(ui.item.key);
                 $(".bussinessList").val(ui.item.value);
+                
             },
             minLength: 1,
-
         });
     }
 

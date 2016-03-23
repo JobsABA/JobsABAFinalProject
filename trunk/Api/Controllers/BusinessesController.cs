@@ -67,7 +67,8 @@ namespace Api.Controllers
 
             try
             {
-                db.Update(business);
+                var objBusiness = db.Update(business);
+                return CreatedAtRoute("DefaultApi", new { id = business.BusinessID }, objBusiness);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -81,7 +82,8 @@ namespace Api.Controllers
                 }
             }
 
-            return StatusCode(HttpStatusCode.NoContent);
+            //return StatusCode(HttpStatusCode.NoContent);
+            
         }
 
         // POST: api/Businesses

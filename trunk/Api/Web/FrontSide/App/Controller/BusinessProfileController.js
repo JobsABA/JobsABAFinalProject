@@ -13,7 +13,7 @@
         //    $scope.getBussinessDetail($scope.BusinessId);
         $scope.getBussinessDetail($scope.BusinessId);
         $scope.randomNumber = Math.random();
-        
+        $rootScope.showUpdateProfile = true;
     }
 
     $scope.initModel = function () {

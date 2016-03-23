@@ -105,6 +105,14 @@ app.config(['$routeProvider', '$locationProvider', 'cfpLoadingBarProvider', func
             templateUrl: 'Template/CreatePassword.html',
             controller: 'CreatePasswordController'
         })
+            .when('/subscription', {
+                templateUrl: 'Template/SubScription.html',
+                controller: 'SubScriptionController'
+            })
+        .when('/payment', {
+            templateUrl: 'Template/Payment.html',
+            controller: 'PaymentController'
+        })
     .otherwise({
         redirectTo: '/home'
     });
@@ -112,13 +120,13 @@ app.config(['$routeProvider', '$locationProvider', 'cfpLoadingBarProvider', func
 }])
 
 .run(function ($rootScope, $location, httpService, $q, $routeParams) {
-    
-    //$rootScope.API_PATH = 'http://localhost:64872/api/';
-    //$rootScope.API_PATH_Image = 'http://localhost:64872/';
 
-    $rootScope.API_PATH = 'http://test.jobsinaba.com/api/';
-    $rootScope.API_PATH_Image = 'http://test.jobsinaba.com/';
-    
+    $rootScope.API_PATH = 'http://localhost:64872/api/';
+    $rootScope.API_PATH_Image = 'http://localhost:64872/';
+
+    //$rootScope.API_PATH = 'http://test.jobsinaba.com/api/';
+    //$rootScope.API_PATH_Image = 'http://test.jobsinaba.com/';
+
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
         if (current && current.$$route) {
             $rootScope.previousPath = current.$$route.originalPath;
@@ -132,7 +140,7 @@ app.config(['$routeProvider', '$locationProvider', 'cfpLoadingBarProvider', func
     });
     $rootScope.$on("$routeChangeSuccess", function (event, currentRoute, previousRoute) {
         window.scrollTo(0, 0);
-        
+
     });
 
     $rootScope.$watch(function () {
@@ -145,9 +153,9 @@ app.config(['$routeProvider', '$locationProvider', 'cfpLoadingBarProvider', func
         }
         else {
             $rootScope.UserLogin = false;
-            
+
         }
-            
+
         //console.log('url has changed: ' + a);
         // show loading div, etc...
     });

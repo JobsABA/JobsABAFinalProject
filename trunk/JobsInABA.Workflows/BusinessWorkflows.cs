@@ -134,13 +134,17 @@ namespace JobsInABA.Workflows
                     businessDTO = businessBL.Create(businessDTO);
                 }
                 dataModel = BusinessDataModelAssembler.ToDataModel(businessDTO, addressDTO, phoneDTO, emailDTO, null, null, businessUserMapDTO, null);
-                new BusinessUserMapBL().Create(new BusinessUserMapDTO()
+                if (dataModel.BusinessUserId != 0)
                 {
-                    BusinessID = dataModel.BusinessID,
-                    UserID = dataModel.BusinessUserId,
-                    BusinessUserTypeID = dataModel.BusinessUserMapTypeCodeId,
-                    IsOwner = true
-                });
+                    new BusinessUserMapBL().Create(new BusinessUserMapDTO()
+                    {
+                        BusinessID = dataModel.BusinessID,
+                        UserID = dataModel.BusinessUserId,
+                        BusinessUserTypeID = dataModel.BusinessUserMapTypeCodeId,
+                        IsOwner = true
+                    });
+                }
+
                 addressDTO = BusinessDataModelAssembler.ToAddressDTO(dataModel);
                 if (addressDTO != null)
                 {
@@ -154,25 +158,33 @@ namespace JobsInABA.Workflows
                     addressDTO = addressList;
                 }
                 dataModel = BusinessDataModelAssembler.ToDataModel(businessDTO, addressDTO, phoneDTO, emailDTO, null, null, businessUserMapDTO, null);
-                new BusinessAddressBL().Create(new BusinessAddressDTO()
+                if (dataModel.Addresses.Count() != 0)
                 {
-                    BusinessID = dataModel.BusinessID,
-                    AddressID = dataModel.Addresses.FirstOrDefault().AddressID,
-                    IsPrimary = true
-                });
-                phoneDTO = BusinessDataModelAssembler.ToPhoneDTO(dataModel);
-                if (phoneDTO != null)
-                {
-                    phoneDTO.AddressbookID = addressDTO.FirstOrDefault().AddressID;
-                    phoneDTO = phonesBL.Create(phoneDTO);
+                    new BusinessAddressBL().Create(new BusinessAddressDTO()
+                    {
+                        BusinessID = dataModel.BusinessID,
+                        AddressID = dataModel.Addresses.FirstOrDefault().AddressID,
+                        IsPrimary = true
+                    });
                 }
-                dataModel = BusinessDataModelAssembler.ToDataModel(businessDTO, addressDTO, phoneDTO, emailDTO, null, null, businessUserMapDTO, null);
-                new BusinessPhoneBL().Create(new BusinessPhoneDTO()
+
+                if (addressDTO.Count != 0)
                 {
-                    BusinessID = dataModel.BusinessID,
-                    PhoneID = dataModel.BusinessPhoneID,
-                    IsPrimary = true
-                });
+                    phoneDTO = BusinessDataModelAssembler.ToPhoneDTO(dataModel);
+                    if (phoneDTO != null)
+                    {
+                        phoneDTO.AddressbookID = addressDTO.FirstOrDefault().AddressID;
+                        phoneDTO = phonesBL.Create(phoneDTO);
+                    }
+                    dataModel = BusinessDataModelAssembler.ToDataModel(businessDTO, addressDTO, phoneDTO, emailDTO, null, null, businessUserMapDTO, null);
+                    new BusinessPhoneBL().Create(new BusinessPhoneDTO()
+                    {
+                        BusinessID = dataModel.BusinessID,
+                        PhoneID = dataModel.BusinessPhoneID,
+                        IsPrimary = true
+                    });
+                }
+                
                 dataModel = BusinessDataModelAssembler.ToDataModel(businessDTO, addressDTO, phoneDTO, emailDTO, null, null, businessUserMapDTO, null);
                 emailDTO = BusinessDataModelAssembler.ToEmailDTO(dataModel);
                 if (emailDTO != null)
@@ -213,6 +225,8 @@ namespace JobsInABA.Workflows
                     businessDTO = businessBL.Update(businessDTO);
                 }
                 dataModel = BusinessDataModelAssembler.ToDataModel(businessDTO, addressDTO, phoneDTO, emailDTO, null, null, businessUserMapDTO, null);
+
+               
                 if (phoneDTO != null)
                 {
                     phoneDTO = phonesBL.Update(phoneDTO);
@@ -246,6 +260,8 @@ namespace JobsInABA.Workflows
                     BusinessAddressID = dataModel.BusinessAddressID,
                     IsPrimary = true
                 });
+                
+
             }
 
             return dataModel;

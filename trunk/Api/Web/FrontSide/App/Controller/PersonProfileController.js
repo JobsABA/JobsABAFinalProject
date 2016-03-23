@@ -26,6 +26,8 @@
 
         //initially call api
         $scope.getLoginUserDetail($scope.userId);
+
+        $rootScope.showUpdateProfile = false;
     }
 
     $scope.iniiUserInfoModel = function () {
@@ -60,8 +62,13 @@
             JobLocation: '',
             StartDate: '',
             EndDate: '',
-            ExperienceID: ''
+            ExperienceID: '',
+            CompanyCity: '',
+            CompanyState: '',
+            CompanyZipCode: ''
         }
+        $(".bussinessList").val('');
+        $(".addLocationDiv").hide();
         $scope.userAchievementModel = {
             AchievementID: '',
             Name: '',
@@ -108,10 +115,14 @@
                     if (data.ExprienceModal[i].Business != null) {
                         newObj["BusinessName"] = data.ExprienceModal[i].Business.Name;
                         newObj["City"] = "";
+                        newObj["State"] = "";
+                        newObj["ZipCode"] = "";
                         if (data.ExprienceModal[i].Business != null && data.ExprienceModal[i].Business.BusinessAddresses != null && data.ExprienceModal[i].Business.BusinessAddresses.length > 0) {
                             for (var j = 0; j < data.ExprienceModal[i].Business.BusinessAddresses.length; j++) {
                                 if (data.ExprienceModal[i].Business.BusinessAddresses[j].IsPrimary == true) {
                                     newObj["City"] = data.ExprienceModal[i].Business.BusinessAddresses[j].Addres.City;
+                                    newObj["State"] = data.ExprienceModal[i].Business.BusinessAddresses[j].Addres.State;
+                                    newObj["ZipCode"] = data.ExprienceModal[i].Business.BusinessAddresses[j].Addres.ZipCode;
                                 }
                             }
                         }
@@ -235,21 +246,57 @@
     $scope.addExprience = function (obj) {
         var name = $(".bussinessList").val();
         var isBusinessFromllist = _.where($rootScope.fulllLstBusiness, { Name: name }).length;
-        if (isBusinessFromllist == 0) {
-            toastr.error("select company name from list");
-            return;
+        if (isBusinessFromllist == 0) {//if compnay not in list, add new compnay
+
+            var _addressArr = new Array();
+            _addressArr[0] = new Object({
+                City: obj.CompanyCity,
+                State: obj.CompanyState,
+                ZipCode: obj.CompanyZipCode,
+                AddressTypeID: 1
+            });
+
+            var Company = {
+                Name: name,
+                BusinessTypeID: 3,
+                BusinessUserMapTypeCodeId: 3,
+                IsActive: false,
+                IsDeleted: false,
+                Addresses: _addressArr,
+            }
+            $http.post($rootScope.API_PATH + "/Businesses/PostBusiness", Company).success(function (data) {
+
+                obj.BusinessID = data.BusinessID;
+                obj.ExperienceID = 0;
+                $http.post($rootScope.API_PATH + "/Experiences/PostExperience", obj).success(function (data) {
+                    toastr.success("Exprience added successfully");
+                    $scope.initModel();
+                    $scope.isADDExprience = false;
+                    $scope.getLoginUserDetail($scope.userId);//bcz in return object not getting company info
+                    //$scope.lstUserExprience.push(data);
+                }).error(function (data) {
+                    toastr.error("error in add exprience");
+                });
+
+            });
+
         }
-        obj.BusinessID = parseInt($(".bussinessList_ID").val());
-        obj.ExperienceID = 0;
-        $http.post($rootScope.API_PATH + "/Experiences/PostExperience", obj).success(function (data) {
-            toastr.success("Exprience added successfully");
-            $scope.initModel();
-            $scope.isADDExprience = false;
-            $scope.getLoginUserDetail($scope.userId);//bcz in return object not getting company info
-            //$scope.lstUserExprience.push(data);
-        }).error(function (data) {
-            toastr.error("error in add exprience");
-        })
+        else {
+
+            obj.BusinessID = parseInt($(".bussinessList_ID").val());
+            obj.ExperienceID = 0;
+            $http.post($rootScope.API_PATH + "/Experiences/PostExperience", obj).success(function (data) {
+                toastr.success("Exprience added successfully");
+                $scope.initModel();
+                $scope.isADDExprience = false;
+                $scope.getLoginUserDetail($scope.userId);//bcz in return object not getting company info
+                //$scope.lstUserExprience.push(data);
+            }).error(function (data) {
+                toastr.error("error in add exprience");
+            });
+
+        }
+
     }
 
     //cancel updation
@@ -263,6 +310,20 @@
     $scope.editExprience = function (obj) {
         //$scope.userExprienceModel.BusinessName = obj.Business.Name;
         $scope.userExprienceModel = obj;
+
+
+        if (obj.Business != null && obj.Business.BusinessAddresses != null && obj.Business.BusinessAddresses.length > 0) {
+            for (var j = 0; j < obj.Business.BusinessAddresses.length; j++) {
+                if (obj.Business.BusinessAddresses[j].IsPrimary == true) {
+                    $scope.userExprienceModel.CompanyCity = obj.Business.BusinessAddresses[j].Addres.City;
+                    $scope.userExprienceModel.CompanyState = obj.Business.BusinessAddresses[j].Addres.State;
+                    $scope.userExprienceModel.CompanyZipCode = obj.Business.BusinessAddresses[j].Addres.ZipCode;
+                }
+            }
+        }
+
+
+        $(".addLocationDiv").show();
         $scope["isEditExprience_" + obj.ExperienceID] = true;
         $rootScope.autocompleteBusinessName();
         $rootScope.reloadDatePicker();
@@ -277,20 +338,88 @@
         else
             name = $(".bussinessList").val();
         var isBusinessFromllist = _.where($rootScope.fulllLstBusiness, { Name: name }).length;
-        if (isBusinessFromllist == 0) {
-            toastr.error("select company name from list");
-            return;
+        var isBusinesIDFromList = _.where($rootScope.fulllLstBusiness, { BusinessID: obj.BusinessID }).length;
+
+        if (isBusinessFromllist == 0) {//if compnay not in list, add new compnay
+
+            if (isBusinesIDFromList == 0) {//if business id not already in list, update compmnay
+                var _addressArr = new Array();
+                _addressArr[0] = new Object({
+                    City: obj.CompanyCity,
+                    State: obj.CompanyState,
+                    ZipCode: obj.CompanyZipCode,
+                    AddressTypeID: 1,
+                    AddressID: obj.Business.BusinessAddresses[0].AddressID
+                });
+
+                var Company = {
+                    Name: name,
+                    Addresses: _addressArr,
+                    BusinessID: obj.BusinessID,
+                    BusinessTypeID: 3,
+                    BusinessUserMapTypeCodeId: 3,
+                }
+
+                $http.put($rootScope.API_PATH + "/Businesses/PutBusiness/" + obj.BusinessID, Company).success(function (data) {
+                    obj.BusinessID = data.BusinessID;
+                    obj.UserID = $scope.userId;
+                    $http.put($rootScope.API_PATH + "/Experiences/PutExperience/" + obj.ExperienceID, obj).success(function (data) {
+                        toastr.success("exprience updated successfully");
+                        $scope.initModel();
+                        $scope["isEditExprience_" + obj.ExperienceID] = false;
+                        $scope.getLoginUserDetail($scope.userId);
+                    }).error(function (data) {
+                        toastr.error("error in update education information. try again");
+                    });
+                });
+            }
+            else {//if businessID already in autocomplete list, add new compny
+                var _addressArr = new Array();
+                _addressArr[0] = new Object({
+                    City: obj.CompanyCity,
+                    State: obj.CompanyState,
+                    ZipCode: obj.CompanyZipCode,
+                    AddressTypeID: 1,
+                });
+
+                var Company = {
+                    Name: name,
+                    Addresses: _addressArr,
+                    BusinessTypeID: 3,
+                    BusinessUserMapTypeCodeId: 3,
+                    IsActive: false,
+                    IsDeleted: false,
+                }
+
+                $http.post($rootScope.API_PATH + "/Businesses/PostBusiness", Company).success(function (data) {
+                    obj.BusinessID = data.BusinessID;
+                    obj.UserID = $scope.userId;
+                    $http.put($rootScope.API_PATH + "/Experiences/PutExperience/" + obj.ExperienceID, obj).success(function (data) {
+                        toastr.success("exprience updated successfully");
+                        $scope.initModel();
+                        $scope["isEditExprience_" + obj.ExperienceID] = false;
+                        $scope.getLoginUserDetail($scope.userId);
+                    }).error(function (data) {
+                        toastr.error("error in update education information. try again");
+                    });
+                });
+            }
+            
         }
-        if ($(".bussinessList_ID").val().length > 0)
-            obj.BusinessID = parseInt($(".bussinessList_ID").val());
-        obj.UserID = $scope.userId;
-        $http.put($rootScope.API_PATH + "/Experiences/PutExperience/" + obj.ExperienceID, obj).success(function (data) {
-            toastr.success("exprience updated successfully");
-            $scope.initModel();
-            $scope["isEditExprience_" + obj.ExperienceID] = false;
-        }).error(function (data) {
-            toastr.error("error in update education information. try again");
-        })
+        else {
+            if ($(".bussinessList_ID").val().length > 0)
+                obj.BusinessID = parseInt($(".bussinessList_ID").val());
+            obj.UserID = $scope.userId;
+            $http.put($rootScope.API_PATH + "/Experiences/PutExperience/" + obj.ExperienceID, obj).success(function (data) {
+                toastr.success("exprience updated successfully");
+                $scope.initModel();
+                $scope["isEditExprience_" + obj.ExperienceID] = false;
+                $scope.getLoginUserDetail($scope.userId);
+            }).error(function (data) {
+                toastr.error("error in update education information. try again");
+            })
+        }
+
     }
 
     //delete user exprience

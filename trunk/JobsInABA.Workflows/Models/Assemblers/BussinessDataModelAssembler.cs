@@ -181,7 +181,7 @@ namespace JobsInABA.Workflows.Models.Assemblers
                 dto.PhoneID = model.BusinessPhoneID;
                 dto.Number = model.BusinessPhoneNumber;
                 dto.PhoneTypeID = model.BusinessPhoneTypeID;
-                dto.AddressbookID = model.BusinessImageID;
+                dto.AddressbookID = model.BusinessPhoneAddressbookID;
             }
 
             return dto;
