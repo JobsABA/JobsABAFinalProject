@@ -95,8 +95,13 @@ namespace JobsInABA.DAL.Repositories
                 try
                 {
                     var passwordInByteArray = Encoding.ASCII.GetBytes(password);
-                    var userAccount = DBContext.UserAccounts.
-                        FirstOrDefault(p => p.UserName == username && p.Password == passwordInByteArray && p.IsActive == true && p.IsDeleted == false);
+                    //var userAccount = DBContext.UserAccounts.
+                    //    FirstOrDefault(p => p.UserName == username && p.Password == passwordInByteArray && p.IsActive == true && p.IsDeleted == false);
+                    var userAccount = (from a in DBContext.Emails where a.Address==username
+                                      join b in DBContext.UserEmails on a.EmailID equals b.EmailID
+                                      join c in DBContext.UserAccounts on b.UserID equals c.UserID
+                                      where b.IsPrimary==true && c.Password==passwordInByteArray
+                                      select c).FirstOrDefault(); 
                     if (userAccount != null)
                     {
                         returnVar = userAccount.UserID;
@@ -207,7 +212,7 @@ namespace JobsInABA.DAL.Repositories
                 }
                 catch (Exception ex)
                 {
-                        throw ex;
+                    throw ex;
                 }
             }
 
@@ -220,16 +225,16 @@ namespace JobsInABA.DAL.Repositories
             JobsInABAEntities DBContext = new JobsInABAEntities();
             //using (DBContext)
             //{
-                try
-                {
-                    //model.IsActive = false;
-                    returnModel = DBContext.Users.Add(model);
-                    DBContext.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
-                }
+            try
+            {
+                //model.IsActive = false;
+                returnModel = DBContext.Users.Add(model);
+                DBContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
             //}
 
             return returnModel;

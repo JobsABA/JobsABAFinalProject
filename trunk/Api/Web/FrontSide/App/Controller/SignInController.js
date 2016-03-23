@@ -22,11 +22,11 @@
 
             if ($scope.isRemember) {
                 httpService.createCookie("uid", data.UserID, 365);
-                httpService.createCookie("uname", data.UserEmailAddress, 365);
+                httpService.createCookie("uname", data.FirstName, 365);
             }
             else {
                 httpService.createCookie("uid", data.UserID);
-                httpService.createCookie("uname", data.UserEmailAddress);
+                httpService.createCookie("uname", data.FirstName);
             }
             $rootScope.loginUserName = httpService.readCookie("uname");
             $rootScope.userId = parseInt(httpService.readCookie("uid"));
@@ -41,7 +41,7 @@
             else
                 $location.path('/personprofile');
         }).error(function (data) {
-            toastr.error("error in login. try again");
+            toastr.error("username or password wrong. try again");
         })
 
     }

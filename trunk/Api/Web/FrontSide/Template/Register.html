@@ -1,7 +1,7 @@
 ﻿<div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <h3 class="text-center">Registration</h3>
+            <h3 class="text-center">CREATE ACCOUNT</h3>
             <hr />
             <div class="col-lg-2">
 
@@ -13,9 +13,9 @@
                       novalidate
                       ng-submit="formSubmit()">
 
-                    <div class="form-group col-lg-12">
+                    <!--<div class="form-group col-lg-12">
                         <input type="text" class="form-control" ng-model="username" placeholder="User Name" ng-class="{'complusoryClass':username==undefined}" ng-required="true">
-                    </div>
+                    </div>-->
                     <div class="form-group col-lg-6">
                         <input type="text" class="form-control" ng-class="{'complusoryClass':firstName==undefined}" ng-model="firstName" placeholder="First Name" ng-required="true">
                     </div>
@@ -28,15 +28,15 @@
                     <!--<div class="form-group col-lg-6">
                         <input type="text" class="form-control datepicer" ng-model="DOB" placeholder="Select Birth Date">
                     </div>-->
-                    <div class="form-group col-lg-4">
+                    <div class="form-group col-lg-6">
                         <input type="email" class="form-control" ng-model="email" placeholder="Email Address" ng-class="{'complusoryClass':email==undefined}" ng-required="true">
                     </div>
-                    <div class="form-group col-lg-4">
-                        <input type="text" class="form-control" ng-model="phone" placeholder="Phone Number">
+                    <div class="form-group col-lg-6">
+                        <input type="text" class="form-control" ng-model="phone" placeholder="Phone Number (to receive jobs via text)" ng-class="{'complusoryClass':phone==undefined}" ng-required="true">
                     </div>
-                    <div class="form-group col-lg-4">
+                    <!--<div class="form-group col-lg-4">
                         <input type="text" class="form-control" ng-model="cellNumber" placeholder="Cell Number">
-                    </div>
+                    </div>-->
                     <div class="form-group col-lg-6">
                         <input type="password" class="form-control" ng-model="password" placeholder="Password" ng-class="{'complusoryClass':password==undefined}" ng-required="true">
                     </div>
@@ -47,7 +47,7 @@
                     <!--<div class="form-group col-lg-12">
                         <input type="text" class="form-control" ng-model="address" placeholder="Address" ng-class="{'complusoryClass':address==undefined}" ng-required="true">
                     </div>-->
-                    <div class="form-group col-lg-4">
+                    <!--<div class="form-group col-lg-4">
                         <input type="text" class="form-control" ng-model="city" placeholder="City" ng-class="{'complusoryClass':city==undefined}" ng-required="true">
                     </div>
                     <div class="form-group col-lg-4">
@@ -55,9 +55,9 @@
                     </div>
                     <div class="form-group col-lg-4">
                         <input type="text" class="form-control" ng-model="zip" placeholder="ZipCode">
-                    </div>
+                    </div>-->
                     <!-- Are you a -->
-                    <div class="form-group col-lg-4" ng-hide="isOtherAreYou">
+                    <!--<div class="form-group col-lg-4" ng-hide="isOtherAreYou">
                         <select class="form-control" ng-model="areYoua" ng-change="changeAreYouA()">
                             <option value="">Are You a</option>
                             <option>BCBA</option>
@@ -81,11 +81,9 @@
                                 <img class="iconImage" ng-click="closeAddNewAreYou()" src="assets/img/Close Window-48.png">
                             </div>
                         </div>
-                    </div>
-
-
+                    </div>-->
                     <!-- Highest Education Level -->
-                    <div class="form-group col-lg-4" ng-hide="isOtherEducation">
+                    <!--<div class="form-group col-lg-4" ng-hide="isOtherEducation">
                         <select class="form-control" ng-model="education" ng-change="changeEducation()">
                             <option value="">Highest Qualification</option>
                             <option>High School Diploma/GED</option>
@@ -108,10 +106,9 @@
                                 <img class="iconImage" ng-click="closeAddNewEducation()" src="assets/img/Close Window-48.png">
                             </div>
                         </div>
-                    </div>
-
+                    </div>-->
                     <!-- hear From -->
-                    <div class="form-group col-lg-4" ng-hide="isOtherRefrence">
+                    <!--<div class="form-group col-lg-4" ng-hide="isOtherRefrence">
                         <select class="form-control" ng-model="refrence" ng-change="changeRefrence()">
                             <option value="">How did you hear about JobsInABA.com?</option>
                             <option>Search Engine</option>
@@ -133,15 +130,14 @@
                                 <img class="iconImage" ng-click="closeAddNewRefrence()" src="assets/img/Close Window-48.png">
                             </div>
                         </div>
-                    </div>
-
+                    </div>-->
                     <!-- social media site -->
-                    <div class="form-group col-lg-12 socialCheckboxDiv">
+                    <!--<div class="form-group col-lg-12 socialCheckboxDiv">
                         <p class="text-center">Which of these social media sites do you use?</p>
                         <div>
                             <input id="facebook" type="checkbox" />
                             <label for="facebook">Facebook</label>
-                            
+
                             <input id="LinkedIn" type="checkbox" />
                             <label for="LinkedIn">LinkedIn</label>
 
@@ -153,10 +149,10 @@
 
                             <input id="Pinterest" type="checkbox" />
                             <label for="Pinterest">Pinterest</label>
-                           
+
                             <input type="text" class="form-control col-lg-3" placeholder="Other Social Media">
                         </div>
-                    </div>
+                    </div>-->
 
 
                     <div class="form-group col-lg-12 text-center">
@@ -185,7 +181,7 @@
         </div>
     </div>
 
-    <hr style="clear:both;" />
+    <!--<hr style="clear:both;" />
     <div class="row">
         <div class="col-lg-12">
             <h3 class="text-center">Subscription Packages</h3>
@@ -294,7 +290,7 @@
             </p>
             <p>** Additional job postings are $149 per post, per month</p>
         </div>
-    </div>
+    </div>-->
 
 </div>
 

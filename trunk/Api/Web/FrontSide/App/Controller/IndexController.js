@@ -9,7 +9,7 @@
         }
         $rootScope.getFullCompanylist();
         $scope.randomNumber = Math.random();
-        
+        $rootScope.showUpdateProfile = true;
     }
 
     $scope.initModel = function () {
@@ -28,6 +28,12 @@
         $rootScope.userId = parseInt(httpService.readCookie("uid"));
         $location.path('/login');
         $rootScope.UserLogin = false;
+    }
+
+    //got to company profile
+    $scope.goToCompanyProfile = function (businessID, businessName) {
+        $rootScope.loginUserName = businessName;
+        $location.path('/viewcompanyprofile/' + businessID);
     }
 
     //get company list by user for menubar
@@ -100,6 +106,7 @@
                     }
                 }
                 response($.map(newBusinessList, function (value, key) {
+                    
                     return {
                         label: value.Name,
                         value: value.Name,

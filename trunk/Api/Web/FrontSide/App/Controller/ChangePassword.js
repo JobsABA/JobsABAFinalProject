@@ -17,8 +17,15 @@
         }
 
         $http.post($rootScope.API_PATH + "/Account/ChangePassword", params).success(function (data) {
-            toastr.success("password change successfully");
-            $location.path('/');
+            if (data == "MisMatch") {
+                toastr.error("enter valid currunt password");
+                return;
+            }
+            else {
+                toastr.success("password change successfully");
+                $location.path('/');
+            }
+            
         }).error(function (data) {
             toastr.error("error in change password");
         });

@@ -224,7 +224,11 @@ namespace JobsInABA.DAL.Repositories
                 {
                     oBusinesss = (from a in oBusinesss
                                   join b in DBContext.BusinessAddresses on a.BusinessID equals b.Business.BusinessID
-                                  where b.IsPrimary == true && b.Address != null && b.Address.City != null && b.Address.City.ToLower().Contains(city.ToLower())
+                                  where (b.IsPrimary == true && b.Address != null &&
+                                  (b.Address.City != null && b.Address.City.ToLower().Contains(city.ToLower())) ||
+                                  (b.Address.State != null && b.Address.State.ToLower().Contains(city.ToLower())) ||
+                                  (b.Address.ZipCode != null && b.Address.ZipCode.ToLower().Contains(city.ToLower()))
+                                  )
                                   select a).ToList();
                 }
 

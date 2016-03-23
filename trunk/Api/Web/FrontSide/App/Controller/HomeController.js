@@ -1,7 +1,7 @@
 ﻿app.controller('HomeController', function ($scope, $location, httpService, $rootScope, $http, $filter) {
 
     $scope.init = function () {
-        $rootScope.loginUserName = httpService.readCookie("uname");
+        //$rootScope.loginUserName = httpService.readCookie("uname");
         $scope.userId = parseInt(httpService.readCookie("uid"));
         $rootScope.autocompleteBusinessName();
         $scope.getCompanyList();

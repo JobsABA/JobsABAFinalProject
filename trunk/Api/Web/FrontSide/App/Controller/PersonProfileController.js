@@ -4,7 +4,7 @@
         $scope.initModel();
         $scope.iniiUserInfoModel();
         $rootScope.loginUserName = httpService.readCookie("uname");
-
+        $rootScope.showUpdateProfile = false;
         $scope.loginUserId = parseInt(httpService.readCookie("uid"));
         $scope.isOwnLogin = true;
         $scope.routeUserID = parseInt($routeParams.UserID);

@@ -3,7 +3,7 @@
     $scope.init = function () {
         $scope.initModel();
         $scope.initJobModel();
-        $rootScope.loginUserName = httpService.readCookie("uname");
+        //$rootScope.loginUserName = httpService.readCookie("uname");
         $scope.userId = parseInt(httpService.readCookie("uid"));
         $scope.BusinessId = parseInt($routeParams.BusinessId);
 

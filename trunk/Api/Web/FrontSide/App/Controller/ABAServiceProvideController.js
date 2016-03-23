@@ -38,7 +38,10 @@
                 $("#abaServiceProviderMainDiv").unblock();
 
                 //lazy loading
-                $scope.CompanyPagingModel.totalReocrd = data[0].Count;
+                if (data.length != 0)
+                    $scope.CompanyPagingModel.totalReocrd = data[0].Count;
+                else
+                    $scope.CompanyPagingModel.totalReocrd = 0;
                 $scope.CompanyPagingModel.pagingCompanyList = $scope.CompanyPagingModel.pagingCompanyList.concat(data);
                 $scope.CompanyPagingModel.initialFrom += $scope.CompanyPagingModel.dataLoadPerReq;
                 $scope.CompanyPagingModel.initialTo += $scope.CompanyPagingModel.dataLoadPerReq;
@@ -62,8 +65,8 @@
             isComplete: true,
             isLastRecord: false,
             initialFrom: 0,
-            initialTo: 4,
-            dataLoadPerReq: 4,
+            initialTo: 8,
+            dataLoadPerReq: 8,
             totalReocrd: 0,
         }
         $scope.getFullCompanyListABAService();

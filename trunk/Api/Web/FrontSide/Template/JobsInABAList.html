@@ -6,10 +6,10 @@
                     <input type="text" class="form-control bussinessList " id="txtCompanyName" ng-model="JobSearchModel.CompnayName" placeholder="COMPANY NAME" ng-enter="searchJobList()">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" ng-model="JobSearchModel.Keywords" placeholder="KEY WORD" ng-enter="searchJobList()">
+                    <input type="text" class="form-control" ng-model="JobSearchModel.Keywords" placeholder="TITLE or KEYWORD" ng-enter="searchJobList()">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control " ng-model="JobSearchModel.Location" placeholder="CITY" ng-enter="searchJobList()">
+                    <input type="text" class="form-control " ng-model="JobSearchModel.Location" placeholder="CITY, STATE, or ZIP" ng-enter="searchJobList()">
                 </div>
                 <button type="button" class="btn btn-blue" ng-click="searchJobList()">SEARCH JOBS</button>
                 <!--<img src="assets/img/JobSearch.png" class="iconImage" style="width:34px;" ng-click="getJobList()" title="Search Job" alt="Search Job" />-->
@@ -21,52 +21,58 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <h3 class="text-center">Available Jobs ABA</h3>
+            <h3 class="text-center">JOBS IN ABA</h3>
             <hr />
         </div>
         <br /><br />
         <div class="col-lg-12">
             <div class="col-lg-3">
                 <!--<img src="assets/img/JobSearch.png" class="iconImage" title="Search Job" alt="Search Job" />-->
-                <h4>Search Job</h4>
+                <h4>Search Jobs in ABA</h4>
                 <div style="border: 1px solid gainsboro;padding: 10px;">
                     <!--<h4>Search Job</h4>-->
                     <div class="form-group">
-                        <label for="category">Category:</label>
+                        <label for="category">Type of Position:</label>
                         <select class="form-control" id="category">
-                            <option>Category 1</option>
-                            <option>Category 2</option>
-                            <option>Category 3</option>
-                            <option>Category 4</option>
+                            <option>All</option>
+                            <option>Clinical</option>
+                            <option>Administrative/Operations</option>
+                            <option>HR/Recruiting</option>
+                            <option>IT/Engineering/Development</option>
+                            <option>Marketing</option>
+                            <option>Finance/Insurance Billing</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="Location">Location:</label>
-                        <select class="form-control" id="Location">
-                            <option>Location 1</option>
-                            <option>Location 2</option>
-                            <option>Location 3</option>
-                            <option>Location 4</option>
+                        <label for="Location">Employment Type:</label>
+                        <select class="form-control" id="">
+                            <option>All</option>
+                            <option>Full Time</option>
+                            <option>Part Time</option>
+                            <option>Internship</option>
+                            <option>Contract</option>
+                            <option>Hourly</option>
+                            <option>Salary</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="Designation">Designation:</label>
-                        <input type="text" class="form-control" id="Designation" placeholder="Designation" />
+                        <label for="Designation">Job Title:</label>
+                        <input type="text" class="form-control" id="Designation" placeholder="TITLE or KEYWORD " />
                     </div>
                     <div class="form-group">
-                        <label for="SkillSet">Skill Set:</label>
-                        <input type="text" class="form-control" id="SkillSet" placeholder="Skill Set" />
+                        <label for="SkillSet">Location:</label>
+                        <input type="text" class="form-control" id="SkillSet" placeholder="CITY, STATE, or ZIP" />
                     </div>
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label for="Experience">Experience:</label>
                         <select class="form-control" id="Experience">
                             <option>1 Yr</option>
                             <option>2 Yr - 4 Yr</option>
                             <option>>4 Yr</option>
                         </select>
-                    </div>
+                    </div>-->
                     <div class="form-group">
-                        <input type="button" class="btn btn-orange" value="Search" />
+                        <input type="button" class="btn btn-orange" value="Search Jobs in ABA" />
                     </div>
                 </div>
             </div>
@@ -109,8 +115,8 @@
                         </div>
                         <div class="col-lg-3" style="border-left: 1px solid antiquewhite;line-height:2;">
                             <span><b>Location</b> :{{o.businessDetail.City}}</span><br />
-                            <span><img src="assets/img/clock_offer.png" style="vertical-align:middle;margin-right:7px;" /> <b>Post Date</b> : <span>{{o.StartDate}}</span></span><br />
-                            <span><img src="assets/img/clock_offer.png" style="vertical-align:middle;margin-right:10px;" /><b>Last Date</b> : <span>{{o.EndDate}}</span></span>
+                            <!--<span><img src="assets/img/clock_offer.png" style="vertical-align:middle;margin-right:7px;" /> <b>Post Date</b> : <span>{{o.StartDate}}</span></span><br />
+                            <span><img src="assets/img/clock_offer.png" style="vertical-align:middle;margin-right:10px;" /><b>Last Date</b> : <span>{{o.EndDate}}</span></span>-->
                             <br /><br />
                             <div class="text-right">
 

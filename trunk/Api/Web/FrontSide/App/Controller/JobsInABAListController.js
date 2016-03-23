@@ -119,8 +119,8 @@
             isComplete: true,
             isLastRecord: false,
             initialFrom: 0,
-            initialTo: 4,
-            dataLoadPerReq: 4,
+            initialTo: 8,
+            dataLoadPerReq: 8,
             totalReocrd: 0,
         }
         $scope.getJobList();

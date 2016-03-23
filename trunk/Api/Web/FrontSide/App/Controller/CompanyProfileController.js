@@ -3,6 +3,7 @@
         $scope.initModel();
         $scope.userId = parseInt(httpService.readCookie("uid"));
         $rootScope.reloadDatePicker();
+        $rootScope.showUpdateProfile = true;
     }
 
     $scope.initModel = function () {

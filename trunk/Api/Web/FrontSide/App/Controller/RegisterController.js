@@ -25,8 +25,8 @@
             return;
         }
         var UserDataModel = {
-            UserName: $scope.username,
-            UserAccountUserName: $scope.username,
+            UserName: $scope.email,
+            UserAccountUserName: $scope.email,
             FirstName: $scope.firstName,
             MiddleName: $scope.middleName,
             LastName: $scope.lastName,

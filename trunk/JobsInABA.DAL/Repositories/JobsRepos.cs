@@ -109,7 +109,11 @@ namespace JobsInABA.DAL.Repositories
             {
                 record = (from a in record
                           join b in db.BusinessAddresses on a.Business.BusinessID equals b.Business.BusinessID
-                          where b.IsPrimary == true && b.Address != null && b.Address.City != null && b.Address.City.ToLower().Contains(location.ToLower())
+                          where b.IsPrimary == true && b.Address != null && 
+                          (b.Address.City != null && b.Address.City.ToLower().Contains(location.ToLower()) ||
+                           b.Address.State != null && b.Address.State.ToLower().Contains(location.ToLower()) ||
+                           b.Address.ZipCode != null && b.Address.ZipCode.ToLower().Contains(location.ToLower())
+                          )
                           select a).ToList();
             }
             totalJob = record.Count();
