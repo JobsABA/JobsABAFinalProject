@@ -51,7 +51,7 @@
     <script src="App/Controller/CreatePassword.js"></script>
     <script src="App/Controller/Payment.js"></script>
     <script src="App/Controller/SubScription.js"></script>
-
+    <script src="App/Controller/VerifyRegistrationPage.js"></script>
     <script>
         $(function () {
             $(".datepicer").datepicker({
@@ -81,8 +81,8 @@
                     $(".navbar-toggle").click();
             });
 
-            
-            
+
+
             //for scroll to top
             $('body').append('<div id="toTop" class="btn btn-orange" style="z-index: 9999999999;"><i class="fa fa-arrow-up"></i></div>');
             $(window).scroll(function () {
@@ -118,7 +118,7 @@
                 <div class="dropdown">
                     <img src="assets/img/Sort Down-48 (1).png" class="dropbtn" style="width: 10px; cursor: pointer; padding: 0; background: none;" />
                     <div class="dropdown-content" style="z-index: 999999; text-align: left; max-height: 500px; overflow-y: scroll; background-color: #fff; background-clip: padding-box; border: 1px solid rgba(0,0,0,0.15); border-radius: 4px; box-shadow: 0 3px 12px rgba(0,0,0,0.15);margin-left:-30px;">
-                        <div id="menubarBuisnessList" >
+                        <div id="menubarBuisnessList">
                             <span style="display: inline-block; padding: 10px 0 5px 10px; color: #1F2A5D; width: 100%; border-bottom: 1px solid antiquewhite;">My Business</span>
                             <!--<a href="#viewcompanyprofile/{{o.BusinessID}}" ng-repeat="o in menuLstBusiness">{{o.Name}}</a>-->
                             <a href="javascript:void(0)" ng-click="goToCompanyProfile(o.BusinessID,o.Name)" ng-repeat="o in menuLstBusiness">{{o.Name}}</a>
@@ -216,7 +216,7 @@
                     </div>
                     <div class="col-lg-4">
                         <ul class="list-unstyled">
-                            <li class="footerMenu"><a href="">News & Press</a></li>
+                            <li class="footerMenu"><a href="#subscription">Subscription Packages</a></li>
                             <li class="footerMenu"><a href="">Events</a></li>
                             <li class="footerMenu"><a href="">Careers</a></li>
                         </ul>
@@ -232,7 +232,13 @@
 
                 </div>
                 <div class="col-lg-3">
-
+                    <div style="margin-top: 110px;text-align: right;">
+                        <flashrichtext version="1">
+                            <textformat font="Verdana" size="11" color="734012" bold="false" italic="false" underline="false" url="" target="" align="left" leftmargin="0" rightmargin="0" indent="0" leading="2" blockindent="0" kerning="false" letterspacing="0" display="block">
+                                <script type="text/javascript" src="https://sealserver.trustwave.com/seal.js?code=9b5e0f9c1f7e4e67a4aaba927966a0da"></script>
+                            </textformat>
+                        </flashrichtext>
+                    </div>
                 </div>
 
                 <!--<div class="col-lg-3">
@@ -285,6 +291,7 @@
                     <div class="col-lg-6">
                         <p class="blue">2015 Jobs In ABA LLC | ALL RIGHTS RESERVED</p>
                     </div>
+
                     <div class="col-lg-6 text-right">
                         <ul class="list-unstyled list-inline">
                             <li><img src="Assets/img/tw.png" height="40" width="40" /></li>

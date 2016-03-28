@@ -41,11 +41,14 @@
     //    });
     //}
 
-    $scope.addCompany = function () {
+    $scope.addCompany = function (validForm) {
         //var _date = "";
         //if ($scope.companyDetailModel.StartDate.length > 0) {
         //    _date = new Date($scope.companyDetailModel.StartDate);
         //}
+        $scope.isSubmit = true;
+        if (!validForm)
+            return;
         var _addressArr = new Array();
         _addressArr[0] = new Object({
             Line1: $scope.companyDetailModel.BusinessAddressLine1,

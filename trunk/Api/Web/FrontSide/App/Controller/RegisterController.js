@@ -18,8 +18,10 @@
 
     }
 
-    $scope.register = function () {
-
+    $scope.register = function (validForm) {
+        $scope.isSubmit = true;
+        if (!validForm)
+            return;
         if ($scope.password != $scope.confirmPassword) {
             toastr.error("Password and  confirm password not match");
             return;

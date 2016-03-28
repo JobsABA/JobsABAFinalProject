@@ -4,7 +4,10 @@
         $scope.loginUserId = parseInt(httpService.readCookie("uid"));
     }
 
-    $scope.ChangePassword = function () {
+    $scope.ChangePassword = function (validForm) {
+        $scope.isSubmit = true;
+        if (!validForm)
+            return;
         if ($scope.newPassword != $scope.ConfirmPassword) {
             toastr.error("password and confirm password not match. try again.")
             return;

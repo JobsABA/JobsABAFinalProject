@@ -24,5 +24,11 @@
         
     }
 
+    $scope.payment = function (formValid) {
+        $scope.isSubmit = true;
+        if (!formValid)
+            return;
+    }
+
     $scope.init();
 });

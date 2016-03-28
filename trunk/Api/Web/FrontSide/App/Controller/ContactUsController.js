@@ -23,8 +23,10 @@
         $anchorScroll();
     }
 
-    $scope.contactUs = function () {
-
+    $scope.contactUs = function (formvalid) {
+        $scope.isSubmit = true;
+        if (!formvalid)
+            return;
     }
 
     $scope.init();

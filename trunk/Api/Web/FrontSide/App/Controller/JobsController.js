@@ -53,7 +53,10 @@
     }
 
     ////create job
-    $scope.createJob = function (obj) {
+    $scope.createJob = function (validForm,obj) {
+        $scope.isSubmit = true;
+        if (!validForm)
+            return;
         if ($scope.jobsModel.Title == undefined || $scope.jobsModel.Title.length == 0) {
             toastr.error('Enter job title');
             return;

@@ -5,9 +5,13 @@
         //$scope.password = '';
         $scope.prePath = $rootScope.previousPath;
         $scope.prePathParam = $rootScope.previousPathParam;
+
     }
 
-    $scope.login = function () {
+    $scope.login = function (val) {
+        $scope.isSubmit = true;
+        if (val == false)
+            return;
 
         if ($scope.username.length == 0 || $scope.password.length == 0) {
             toastr.error("Enter username and password.");

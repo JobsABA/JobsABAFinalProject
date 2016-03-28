@@ -54,7 +54,7 @@
                       ng-submit="formSubmit()">
 
                     <div class="form-group col-lg-6">
-                        <select class="form-control" ng-model="ContactUsModel.UserType" ng-class="{'complusoryClass':ContactUsModel.UserType==undefined}" ng-required="true">
+                        <select class="form-control" ng-model="ContactUsModel.UserType" ng-class="{'complusoryClass':ContactUsModel.UserType==undefined && isSubmit==true}"  ng-required="true">
                             <option value="">I am</option>
                             <option value="Job_Seeker">Job Seeker</option>
                             <option value="Employer">Employer</option>
@@ -63,7 +63,7 @@
                         </select>
                     </div>
                     <div class="form-group col-lg-6">
-                        <select class="form-control" ng-model="ContactUsModel.Category" ng-class="{'complusoryClass':ContactUsModel.Category==undefined}" ng-required="true">
+                        <select class="form-control" ng-model="ContactUsModel.Category" ng-class="{'complusoryClass':ContactUsModel.Category==undefined && isSubmit==true}" ng-required="true">
                             <option value="">Select Category</option>
                             <option value="Feedback">Feedback</option>
                             <option value="Tech_Support">Tech Support</option>
@@ -73,14 +73,14 @@
                     </div>
 
                     <div class="form-group col-lg-6">
-                        <input type="text" class="form-control" ng-model="ContactUsModel.FirstName" placeholder="First Name" ng-class="{'complusoryClass':ContactUsModel.FirstName==undefined}" ng-required="true">
+                        <input type="text" class="form-control" ng-model="ContactUsModel.FirstName" placeholder="First Name" ng-class="{'complusoryClass':ContactUsModel.FirstName==undefined && isSubmit==true}" ng-required="true">
                     </div>
                     <div class="form-group col-lg-6">
-                        <input type="text" class="form-control" ng-model="ContactUsModel.LastName" placeholder="Last Name" ng-class="{'complusoryClass':ContactUsModel.LastName==undefined}" ng-required="true">
+                        <input type="text" class="form-control" ng-model="ContactUsModel.LastName" placeholder="Last Name" ng-class="{'complusoryClass':ContactUsModel.LastName==undefined && isSubmit==true}" ng-required="true">
                     </div>
 
                     <div class="form-group col-lg-6">
-                        <input type="email" class="form-control" ng-model="ContactUsModel.EmailAddress" placeholder="Email Address" ng-class="{'complusoryClass':ContactUsModel.EmailAddress==undefined}" ng-required="true">
+                        <input type="email" class="form-control" ng-model="ContactUsModel.EmailAddress" placeholder="Email Address" ng-class="{'complusoryClass':ContactUsModel.EmailAddress==undefined && isSubmit==true}" ng-required="true">
                     </div>
 
                     <div class="form-group col-lg-6">
@@ -100,7 +100,7 @@
                         <span class="remainCharacterClass"><span id="remainCharacter">500</span> characters remaining</span>
                     </div>
                     <div class="form-group col-lg-12 text-center">
-                        <input type="button" class="btn btn-orange" ng-disabled="!formContactUS.$valid" ng-click="contactUs()" value="Submit" />
+                        <input type="button" class="btn btn-orange" ng-click="contactUs(formContactUS.$valid)" value="Submit" />
                     </div>
 
                 </form>
