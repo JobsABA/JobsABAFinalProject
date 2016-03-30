@@ -1286,6 +1286,7 @@
     <Content Include="Web\FrontSide\App\Controller\JobsInABAListController.js" />
     <Content Include="Web\FrontSide\App\Controller\OrderListController.js" />
     <Content Include="Web\FrontSide\App\Controller\Payment.js" />
+    <Content Include="Web\FrontSide\App\Controller\PaymentReceipt.js" />
     <Content Include="Web\FrontSide\App\Controller\PersonProfileController.js" />
     <Content Include="Web\FrontSide\App\Controller\RegisterController.js" />
     <Content Include="Web\FrontSide\App\Controller\SignInController.js" />
@@ -1741,6 +1742,7 @@
     <Content Include="Web\FrontSide\Template\JobsInABAList.html" />
     <Content Include="Web\FrontSide\Template\OrderList.html" />
     <Content Include="Web\FrontSide\Template\Payment.html" />
+    <Content Include="Web\FrontSide\Template\PaymentReceipt.html" />
     <Content Include="Web\FrontSide\Template\PersonProfile.html" />
     <Content Include="Web\FrontSide\Template\PrivacyPolicy.html" />
     <Content Include="Web\FrontSide\Template\PublishedJob.html" />

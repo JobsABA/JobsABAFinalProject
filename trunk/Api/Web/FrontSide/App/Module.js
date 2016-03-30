@@ -113,6 +113,10 @@ app.config(['$routeProvider', '$locationProvider', 'cfpLoadingBarProvider', func
             templateUrl: 'Template/Payment.html',
             controller: 'PaymentController'
         })
+         .when('/paymentReceipt', {
+             templateUrl: 'Template/PaymentReceipt.html',
+             controller: 'PaymentReceiptController'
+         })
     .otherwise({
         redirectTo: '/home'
     });
