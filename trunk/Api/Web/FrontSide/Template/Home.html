@@ -164,7 +164,8 @@
                         </div>
                         <div class="col-lg-2 text-right">
                             <a ng-if="UserLogin==false" href="#login" class="btn btn-blue" style="color:white">Apply</a>
-                            <a ng-if="UserLogin==true && o.businessDetail.IsBusinessOwner!=1" href="javascript:void(0)" ng-click="applyJob(o.JobID)" class="btn btn-blue" style="color:white">Apply</a>
+                            <a ng-if="UserLogin==true && o.businessDetail.IsBusinessOwner!=1" ng-hide="AlreadyApplied_{{o.JobID}}" href="javascript:void(0)" ng-click="applyJob(o.JobID)" class="btn btn-blue" style="color:white">Apply</a>
+                            <a ng-if="UserLogin==true && o.businessDetail.IsBusinessOwner!=1" ng-show="AlreadyApplied_{{o.JobID}}" class="btn btn-orange" href="javascript:void(0)" style="color:white">Applied</a>
                         </div>
 
                     </div>

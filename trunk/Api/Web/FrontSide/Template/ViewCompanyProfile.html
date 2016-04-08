@@ -533,7 +533,8 @@
                                             <div class="col-lg-1 text-right">
                                                 <img ng-if="UserLogin==true && isUserBusinessOwner==true" src="assets/img/ApplicationView.png" title="View Application List" ng-click="viewApplivation(o.JobID)" class="iconImage" />
                                                 <a href="#updateJob/{{o.JobID}}/{{bussinessDetail.BusinessID}}"><img ng-if="isUserBusinessOwner==true" ng-show="isMainEditJobList_{{o.JobID}}" class='iconImage' src='assets/img/EDIT_USE.png'></a>
-                                                <img ng-if="isUserBusinessOwner==true" ng-show="isMainEditJobList_{{o.JobID}}" class='iconImage' ng-click="deleteJob(o.JobID)" src='assets/img/delete-48.png'>
+                                                <!--<img ng-if="isUserBusinessOwner==true" ng-show="isMainEditJobList_{{o.JobID}}" class='iconImage' ng-click="deleteJob(o.JobID)" src='assets/img/delete-48.png'>-->
+                                                <img ng-if="isUserBusinessOwner==true" ng-show="isMainEditJobList_{{o.JobID}}" class='iconImage' ng-really-message="Are you sure want to delete this record?" ng-really-click="deleteJob(o.JobID)" src='assets/img/delete-48.png'>
 
                                             </div>
                                             <hr style="clear: both; border-color: #E85835" />

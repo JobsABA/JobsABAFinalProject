@@ -1476,6 +1476,7 @@
     <Content Include="Web\FrontSide\Assets\img\zoom_error.png" />
     <Content Include="Web\FrontSide\Assets\jquery\jquery.min.js" />
     <Content Include="Web\FrontSide\Assets\jquery\lazy-scroll.min.js" />
+    <Content Include="Web\FrontSide\Assets\jquery\ui-bootstrap-tpls-0.10.0.js" />
     <Content Include="Web\FrontSide\Assets\js\angular-animate.js" />
     <Content Include="Web\FrontSide\Assets\js\angular-animate.min.js" />
     <Content Include="Web\FrontSide\Assets\js\angular-backtop.js" />

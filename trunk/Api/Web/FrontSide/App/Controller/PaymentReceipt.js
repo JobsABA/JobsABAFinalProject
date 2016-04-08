@@ -55,7 +55,34 @@
     $scope.displayReceipt = function () {
         var obj = httpService.readCookie("payResUrl");
         obj = JSON.parse(obj);
-        obj.ssl_txn_time = obj.ssl_txn_time.replace('+', ' ').replace('+', ' ');
+        //obj.ssl_txn_time = obj.ssl_txn_time.replace('+', ' ').replace('+', ' ');
+        obj.ssl_txn_time = obj.ssl_txn_time.replace(/\+/g, ' ');
+        if (obj.ssl_customer_code != undefined && obj.ssl_customer_code != null)
+            obj.ssl_customer_code = obj.ssl_customer_code.replace(/\+/g, ' ');
+
+        if (obj.ssl_country != undefined && obj.ssl_country != null)
+            obj.ssl_country = obj.ssl_country.replace(/\+/g, ' ');
+
+        if (obj.ssl_state != undefined && obj.ssl_state != null)
+            obj.ssl_state = obj.ssl_state.replace(/\+/g, ' ');
+
+        if (obj.ssl_city != undefined && obj.ssl_city != null)
+            obj.ssl_city = obj.ssl_city.replace(/\+/g, ' ');
+
+        if (obj.ssl_address2 != undefined && obj.ssl_address2 != null)
+            obj.ssl_address2 = obj.ssl_address2.replace(/\+/g, ' ');
+
+        if (obj.ssl_avs_address != undefined && obj.ssl_avs_address != null)
+            obj.ssl_avs_address = obj.ssl_avs_address.replace(/\+/g, ' ');
+
+        if (obj.ssl_last_name != undefined && obj.ssl_last_name != null)
+            obj.ssl_last_name = obj.ssl_last_name.replace(/\+/g, ' ');
+
+        if (obj.ssl_first_name != undefined && obj.ssl_first_name != null)
+            obj.ssl_first_name = obj.ssl_first_name.replace(/\+/g, ' ');
+
+        if (obj.ssl_company != undefined && obj.ssl_company != null)
+        obj.ssl_company = obj.ssl_company.replace(/\+/g, ' ');
         $scope.modalPaymentResponse = obj;
     }
 

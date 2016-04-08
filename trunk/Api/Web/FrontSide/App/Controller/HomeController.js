@@ -87,9 +87,15 @@
                         newobj["IsBusinessOwner"] = 1;
                     }
                     data[i]["businessDetail"] = newRow[0];
-
                     data[i].StartDate = $rootScope.setDateformat(data[i].StartDate);
                     data[i].EndDate = $rootScope.setDateformat(data[i].EndDate);
+                    //check is login user alredy apply for this job or not
+                    if (data[i].JobApplications != null && data[i].JobApplications.length > 0) {
+                        var isApplied = _.where(data[i].JobApplications, { ApplicantUserID: $scope.userId }).length;
+                        if (isApplied > 0) {
+                            $scope["AlreadyApplied_" + data[i].JobID] = true;
+                        }
+                    }
                 }
             }
 

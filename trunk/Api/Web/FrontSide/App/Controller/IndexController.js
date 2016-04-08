@@ -76,6 +76,7 @@
         }
         $http.post($rootScope.API_PATH + "/JobApplications/PostJobApplication", params).success(function (data) {
             toastr.success("successfully apply for this job");
+            $scope["AlreadyApplied_" + jobID] = true;
         }).error(function (data, status, headers, config) {
             if (status == 409) {
                 toastr.info("you are already applied for this job");

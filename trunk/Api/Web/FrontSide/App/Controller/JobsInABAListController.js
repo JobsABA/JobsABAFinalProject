@@ -63,6 +63,7 @@
             $("#jobsInABAListDiv").block({ message: '<img src="Assets/img/loader.gif" />' });
             $http.get($rootScope.API_PATH + "/Jobs/GetJobsBySearch", { params: params }).success(function (listJob) {
                 var data = listJob.record;
+                console.log(data);
                 $("#jobsInABAListDiv").unblock();
                 for (var i = 0; i < data.length; i++) {
                     var newobj = new Object();
@@ -94,6 +95,14 @@
                     data[i]["businessDetail"] = newRow[0];
                     data[i].StartDate = $rootScope.setDateformat(data[i].StartDate);
                     data[i].EndDate = $rootScope.setDateformat(data[i].EndDate);
+
+                    //check is login user alredy apply for this job or not
+                    if (data[i].JobApplications!=null && data[i].JobApplications.length > 0) {
+                        var isApplied = _.where(data[i].JobApplications, { ApplicantUserID: $scope.userId }).length;
+                        if (isApplied > 0) {
+                            $scope["AlreadyApplied_" + data[i].JobID] = true;
+                        }
+                    }
                 }
                 //lazy loading
                 $scope.jobPagingModel.totalReocrd = listJob.TotalJobCount;

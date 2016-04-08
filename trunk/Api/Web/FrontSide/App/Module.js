@@ -1,4 +1,4 @@
-﻿var app = angular.module("myApp", ["ngRoute", "angular-loading-bar", "lazy-scroll"]);
+﻿var app = angular.module("myApp", ["ngRoute", "angular-loading-bar", "lazy-scroll", "ui.bootstrap"]);
 
 app.config(['$routeProvider', '$locationProvider', 'cfpLoadingBarProvider', function ($routeProvider, $locationProvider, cfpLoadingBarProvider, $rootScope) {
     cfpLoadingBarProvider.includeSpinner = true;
@@ -109,7 +109,7 @@ app.config(['$routeProvider', '$locationProvider', 'cfpLoadingBarProvider', func
                 templateUrl: 'Template/SubScription.html',
                 controller: 'SubScriptionController'
             })
-        .when('/payment', {
+        .when('/payment/:OrderID', {
             templateUrl: 'Template/Payment.html',
             controller: 'PaymentController'
         })
@@ -125,11 +125,11 @@ app.config(['$routeProvider', '$locationProvider', 'cfpLoadingBarProvider', func
 
 .run(function ($rootScope, $location, httpService, $q, $routeParams) {
 
-    $rootScope.API_PATH = 'http://localhost:64872/api/';
-    $rootScope.API_PATH_Image = 'http://localhost:64872/';
+    //$rootScope.API_PATH = 'http://localhost:64872/api/';
+    //$rootScope.API_PATH_Image = 'http://localhost:64872/';
 
-    //$rootScope.API_PATH = 'http://test.jobsinaba.com/api/';
-    //$rootScope.API_PATH_Image = 'http://test.jobsinaba.com/';
+    $rootScope.API_PATH = 'http://test.jobsinaba.com/api/';
+    $rootScope.API_PATH_Image = 'http://test.jobsinaba.com/';
 
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
         if (current && current.$$route) {

@@ -24,7 +24,8 @@
                         visible on our service providers page and listed on the job search directory page
                     </div>
                     <div class="addFooter">
-                        <a class="btn btn-orange" href="javascript:0" ng-click="gotoPayment('99')">Subscribe</a>
+                        <a class="btn btn-orange" href="javascript:0" ng-click="gotoPayment('99')" ng-if="UserLogin==true">Subscribe</a>
+                        <a class="btn btn-orange" href="#login" ng-if="UserLogin==false">Subscribe</a>
                     </div>
                 </div>
 
@@ -55,7 +56,8 @@
                         </p>
                     </div>
                     <div class="addFooter">
-                        <a class="btn btn-orange" href="javascript:0" ng-click="gotoPayment('249')">Subscribe</a>
+                        <a class="btn btn-orange" href="javascript:0" ng-click="gotoPayment('249')" ng-if="UserLogin==true">Subscribe</a>
+                        <a class="btn btn-orange" href="#login" ng-if="UserLogin==false">Subscribe</a>
                     </div>
                 </div>
 
@@ -91,7 +93,8 @@
                         </p>
                     </div>
                     <div class="addFooter">
-                        <a class="btn btn-orange" href="javascript:0" ng-click="gotoPayment('499')">Subscribe</a>
+                        <a class="btn btn-orange" href="javascript:0" ng-click="gotoPayment('499')" ng-if="UserLogin==true">Subscribe</a>
+                        <a class="btn btn-orange" href="#login" ng-if="UserLogin==false">Subscribe</a>
                     </div>
                 </div>
 
@@ -122,7 +125,7 @@
 </div>
 
 
-<form id="paymentForm" style="display:none;" action="https://demo.myvirtualmerchant.com/VirtualMerchantDemo/process.do" method="post">
+<form id="paymentForm" style="display:none"  action="https://demo.myvirtualmerchant.com/VirtualMerchantDemo/process.do" method="post">
     <input type="hidden" name="ssl_amount" id="ssl_amount">
     <input type="hidden" name="ssl_merchant_id" value="003125">
     <input type="hidden" name="ssl_user_id" value="webpage">

@@ -42,6 +42,8 @@
                 $location.path('/viewcompanyprofile/' + $scope.prePathParam);
             else if ($scope.prePath == "/home")
                 $location.path('/home');
+            else if ($scope.prePath == "/subscription")
+                $location.path('/subscription');
             else
                 $location.path('/personprofile');
         }).error(function (data) {
