@@ -1272,6 +1272,7 @@
     <Content Include="Web\Admin\Template\RoleMgmt.html" />
     <Content Include="Web\Admin\Template\UserManagement.html" />
     <Content Include="Web\FrontSide\App\Controller\ABAServiceProvideController.js" />
+    <Content Include="Web\FrontSide\App\Controller\AboutUsController.js" />
     <Content Include="Web\FrontSide\App\Controller\AdPackageController.js" />
     <Content Include="Web\FrontSide\App\Controller\BlogListController.js" />
     <Content Include="Web\FrontSide\App\Controller\BusinessProfileController.js" />
@@ -1279,6 +1280,7 @@
     <Content Include="Web\FrontSide\App\Controller\CompanyProfileController.js" />
     <Content Include="Web\FrontSide\App\Controller\ContactUsController.js" />
     <Content Include="Web\FrontSide\App\Controller\CreatePassword.js" />
+    <Content Include="Web\FrontSide\App\Controller\EventsController.js" />
     <Content Include="Web\FrontSide\App\Controller\footerMenuController.js" />
     <Content Include="Web\FrontSide\App\Controller\HomeController.js" />
     <Content Include="Web\FrontSide\App\Controller\IndexController.js" />
@@ -1387,6 +1389,7 @@
     <Content Include="Web\FrontSide\Assets\img\icon_trust2.png" />
     <Content Include="Web\FrontSide\Assets\img\icon_trust3.png" />
     <Content Include="Web\FrontSide\Assets\img\icon_trust4.png" />
+    <Content Include="Web\FrontSide\Assets\img\images.png" />
     <Content Include="Web\FrontSide\Assets\img\imges.png" />
     <Content Include="Web\FrontSide\Assets\img\imgres.png" />
     <Content Include="Web\FrontSide\Assets\img\in.png" />
@@ -1730,6 +1733,7 @@
     <Content Include="Web\FrontSide\Assets\styles\toastr.min.css" />
     <Content Include="Web\FrontSide\index.html" />
     <Content Include="Web\FrontSide\Template\ABAServiceProvide.html" />
+    <Content Include="Web\FrontSide\Template\AboutUs.html" />
     <Content Include="Web\FrontSide\Template\AdPackageList.html" />
     <Content Include="Web\FrontSide\Template\BlogDetail.html" />
     <Content Include="Web\FrontSide\Template\BlogList.html" />
@@ -1738,6 +1742,7 @@
     <Content Include="Web\FrontSide\Template\ContactUs.html" />
     <Content Include="Web\FrontSide\Template\CreateJob.html" />
     <Content Include="Web\FrontSide\Template\CreatePassword.html" />
+    <Content Include="Web\FrontSide\Template\Events.html" />
     <Content Include="Web\FrontSide\Template\Home.html" />
     <Content Include="Web\FrontSide\Template\JobDetail.html" />
     <Content Include="Web\FrontSide\Template\JobsInABAList.html" />

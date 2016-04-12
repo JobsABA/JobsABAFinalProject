@@ -668,5 +668,30 @@ hr {
 }
 
 .btn:focus {
-    color:white !important;
+    color: white !important;
 }
+
+.copy {
+    position: absolute;
+    top: 70%;
+    margin-top: -50px;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    text-align: center;
+    color: #FFF;
+}
+
+    .copy h1 {
+        text-transform: uppercase;
+        line-height: 48px;
+    }
+
+        .copy h1 strong {
+            color: #EC5937;
+            font-weight: normal;
+        }
+
+    .copy h3 {
+        text-transform: uppercase;
+    }

@@ -117,6 +117,14 @@ app.config(['$routeProvider', '$locationProvider', 'cfpLoadingBarProvider', func
              templateUrl: 'Template/PaymentReceipt.html',
              controller: 'PaymentReceiptController'
          })
+        .when('/aboutus', {
+            templateUrl: 'Template/AboutUs.html',
+            controller: 'AboutusController'
+        })
+        .when('/events', {
+            templateUrl: 'Template/Events.html',
+            controller: 'EventsController'
+        })
     .otherwise({
         redirectTo: '/home'
     });
@@ -125,11 +133,11 @@ app.config(['$routeProvider', '$locationProvider', 'cfpLoadingBarProvider', func
 
 .run(function ($rootScope, $location, httpService, $q, $routeParams) {
 
-    //$rootScope.API_PATH = 'http://localhost:64872/api/';
-    //$rootScope.API_PATH_Image = 'http://localhost:64872/';
+    $rootScope.API_PATH = 'http://localhost:64872/api/';
+    $rootScope.API_PATH_Image = 'http://localhost:64872/';
 
-    $rootScope.API_PATH = 'http://test.jobsinaba.com/api/';
-    $rootScope.API_PATH_Image = 'http://test.jobsinaba.com/';
+    //$rootScope.API_PATH = 'http://test.jobsinaba.com/api/';
+    //$rootScope.API_PATH_Image = 'http://test.jobsinaba.com/';
 
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
         if (current && current.$$route) {
