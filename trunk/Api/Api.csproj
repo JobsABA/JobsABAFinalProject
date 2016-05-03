@@ -1305,6 +1305,7 @@
     <Content Include="Web\FrontSide\Assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Web\FrontSide\Assets\bootstrap\js\bootstrap.js" />
     <Content Include="Web\FrontSide\Assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Web\FrontSide\Assets\img\AboutUs_sitepage.jpg" />
     <Content Include="Web\FrontSide\Assets\img\about_back.png" />
     <Content Include="Web\FrontSide\Assets\img\about_next.png" />
     <Content Include="Web\FrontSide\Assets\img\Acheivement.png" />
@@ -1339,6 +1340,7 @@
     <Content Include="Web\FrontSide\Assets\img\companySUmmery.png" />
     <Content Include="Web\FrontSide\Assets\img\Contact-details.png" />
     <Content Include="Web\FrontSide\Assets\img\contactus-Header.jpg" />
+    <Content Include="Web\FrontSide\Assets\img\ContactUs_sitepage.jpg" />
     <Content Include="Web\FrontSide\Assets\img\contact_button.png" />
     <Content Include="Web\FrontSide\Assets\img\contact_phone.png" />
     <Content Include="Web\FrontSide\Assets\img\contact_pointer.png" />
@@ -1381,6 +1383,8 @@
     <Content Include="Web\FrontSide\Assets\img\Help-48.png" />
     <Content Include="Web\FrontSide\Assets\img\Hiring now.png" />
     <Content Include="Web\FrontSide\Assets\img\home-icon-silhouette.png" />
+    <Content Include="Web\FrontSide\Assets\img\HomePage_Left_sitepage.jpg" />
+    <Content Include="Web\FrontSide\Assets\img\HomePage_Right_sitepage.jpg" />
     <Content Include="Web\FrontSide\Assets\img\icon1.png" />
     <Content Include="Web\FrontSide\Assets\img\icon2.png" />
     <Content Include="Web\FrontSide\Assets\img\icon3.png" />

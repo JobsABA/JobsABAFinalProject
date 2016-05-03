@@ -55,8 +55,10 @@ app.config(['$routeProvider', '$locationProvider', 'cfpLoadingBarProvider', func
     //$rootScope.API_PATH = 'http://localhost:13177/';
     //$rootScope.API_PATH = 'http://test.jobsinaba.com/';
     //$rootScope.API_PATH = 'http://edmx.jobsinaba.com/';
-    $rootScope.API_PATH = 'http://localhost:64872/api/';
-    $rootScope.API_PATH_Image = 'http://localhost:64872/';
+    //$rootScope.API_PATH = 'http://localhost:64872/api/';
+    //$rootScope.API_PATH_Image = 'http://localhost:64872/';
+    $rootScope.API_PATH = 'http://test.jobsinaba.com/api/';
+    $rootScope.API_PATH_Image = 'http://test.jobsinaba.com/';
 
 
 

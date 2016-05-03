@@ -97,11 +97,12 @@ namespace JobsInABA.DAL.Repositories
                     var passwordInByteArray = Encoding.ASCII.GetBytes(password);
                     //var userAccount = DBContext.UserAccounts.
                     //    FirstOrDefault(p => p.UserName == username && p.Password == passwordInByteArray && p.IsActive == true && p.IsDeleted == false);
-                    var userAccount = (from a in DBContext.Emails where a.Address==username
-                                      join b in DBContext.UserEmails on a.EmailID equals b.EmailID
-                                      join c in DBContext.UserAccounts on b.UserID equals c.UserID
-                                      where b.IsPrimary==true && c.Password==passwordInByteArray
-                                      select c).FirstOrDefault(); 
+                    var userAccount = (from a in DBContext.Emails
+                                       where a.Address == username
+                                       join b in DBContext.UserEmails on a.EmailID equals b.EmailID
+                                       join c in DBContext.UserAccounts on b.UserID equals c.UserID
+                                       where b.IsPrimary == true && c.Password == passwordInByteArray && c.IsActive == true
+                                       select c).FirstOrDefault();
                     if (userAccount != null)
                     {
                         returnVar = userAccount.UserID;

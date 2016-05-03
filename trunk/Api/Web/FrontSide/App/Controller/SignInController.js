@@ -58,7 +58,7 @@
             ForgotEmailAddress: $scope.forgotPasswordLink
         }
         $http.post($rootScope.API_PATH + "Account/ForgotPassword", forgotEmail).success(function (data) {
-            toastr.success("password reset link send to you mail address.");
+            toastr.success("The password email reset link has been successfully sent to your email.");
             $scope.forgotPasswordLink = '';
         }).error(function (data) {
             console.log(data);
