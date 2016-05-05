@@ -1,0 +1,142 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="text-center">Subscription Packages</h3>
+            <hr />
+            <div class="col-lg-4">
+                <div class="advmainDiv">
+                    <div class="advHeader">
+                        <h3>Basic</h3>
+                    </div>
+                    <div class="advSubHeader">
+                        <p>$99 PER MONTH</p>
+                        <span>-</span>
+                        <p>FREE MONTH WITH YEARLY SUBSCRIPTION*</p>
+                    </div>
+                    <div class="advEven" style="height: 130px;">
+                        <p>Manage your company’s profile page and advertise your mission, team, and hiring opportunities</p>
+                    </div>
+                    <div class="advOdd" style="height: 148px;">
+                        <p>Brand your company by advertising your logo on our service providers and job search directory pages</p>
+                    </div>
+                    <div class="advEven" style="height: 160px;">
+                        1 job post per month**<br />
+                        visible on our service providers page and listed on the job search directory page
+                    </div>
+                    <div class="addFooter">
+                        <a class="btn btn-orange" href="javascript:0" ng-click="gotoPayment('99')" ng-if="UserLogin==true">Subscribe</a>
+                        <a class="btn btn-orange" href="#login" ng-if="UserLogin==false">Subscribe</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-4">
+                <div class="advmainDiv">
+                    <div class="advHeader">
+                        <h3>Premium</h3>
+                    </div>
+                    <div class="advSubHeader">
+                        <p>$249 PER MONTH </p>
+                        <span>-</span>
+                        <p>FREE MONTH WITH YEARLY SUBSCRIPTION*</p>
+                    </div>
+                    <div class="advEven" style="height: 84px;">
+                        <p>Manage your company’s profile page and advertise your mission, team, and hiring opportunities</p>
+                    </div>
+                    <div class="advOdd" style="height: 130px;">
+                        <p>Brand your company by your logo on our service providers and job search directory pages</p>
+                    </div>
+                    <div class="advEven" style="height: 117px;">
+                        3 job posts per month**<br />
+                        visible on our service providers page and listed on the job search directory page
+                    </div>
+                    <div class="advOdd" style="height: 108px;">
+                        <p>
+                            Submit conferences and events your company will be attending for distribution to all of our subscribers via email and social media platforms
+                        </p>
+                    </div>
+                    <div class="addFooter">
+                        <a class="btn btn-orange" href="javascript:0" ng-click="gotoPayment('249')" ng-if="UserLogin==true">Subscribe</a>
+                        <a class="btn btn-orange" href="#login" ng-if="UserLogin==false">Subscribe</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-4">
+                <div class="advmainDiv">
+                    <div class="advHeader">
+                        <h3>Deluxe</h3>
+                    </div>
+                    <div class="advSubHeader">
+                        <p>$499 PER MONTH </p>
+                        <span>-</span>
+                        <p>FREE MONTH WITH YEARLY SUBSCRIPTION*</p>
+                    </div>
+                    <div class="advEven">
+                        <p>Manage your company’s profile page and advertise your mission, team, and hiring opportunities</p>
+                    </div>
+                    <div class="advOdd">
+                        <p>Brand your company by advertising your logo on our service provider and job search directory pages</p>
+                    </div>
+                    <div class="advEven">
+                        <p>
+                            Top advertising placement on our home, service providers, and job search directory pages and blog
+                        </p>
+                    </div>
+                    <div class="advOdd">
+                        5 job posts per month**<br />
+                        visible on our service providers page and listed on the job search directory page
+                    </div>
+                    <div class="advEven">
+                        <p>
+                            Submit conferences and events your company will be attending for distribution to all of our subscribers via email and social media platforms
+                        </p>
+                    </div>
+                    <div class="addFooter">
+                        <a class="btn btn-orange" href="javascript:0" ng-click="gotoPayment('499')" ng-if="UserLogin==true">Subscribe</a>
+                        <a class="btn btn-orange" href="#login" ng-if="UserLogin==false">Subscribe</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <br /><br />
+    <div class="row">
+        <div class="col-lg-12" style="border: 1px solid gainsboro;padding: 10px;">
+            <p>
+                * Guarantee your advertising spot all year long by subscribing to a yearly package
+            </p>
+            <p>** Additional job postings are $149 per post, per month</p>
+        </div>
+    </div>
+
+    <br /><br />
+    <div class="row">
+        <div class="col-lg-12">
+            <h4>Refund Policy</h4>
+            <p>All fees and charges are nonrefundable and there are no refunds or credits for partially used periods. All paid products including yearly Basic, Premium, and Deluxe subscriptions or additional job postings outside of the subscription packages are nonrefundable after purchase and delivery.</p>
+            <p>An exception we may consider is providing a refund when we have updated your payment information and there are good reasons to believe that you did not intend for an update to be made.</p>
+            <p>For billing inquiries please contact: <a href="mailto:support@jobsinaba.com">support@jobsinaba.com</a></p>
+        </div>
+    </div>
+
+</div>
+
+
+<form id="paymentForm" style="display:none"  action="https://demo.myvirtualmerchant.com/VirtualMerchantDemo/process.do" method="post">
+    <input type="hidden" name="ssl_amount" id="ssl_amount">
+    <input type="hidden" name="ssl_merchant_id" value="003125">
+    <input type="hidden" name="ssl_user_id" value="webpage">
+    <input type="hidden" name="ssl_pin" value="IG7CEY">
+    <input type="hidden" name="ssl_transaction_type" value="ccsale">
+    <input type="hidden" name="ssl_show_form" value="true">
+    <input type="hidden" name="ssl_cvv2cvc2_indicator" value="1">
+    <input type="hidden" name="ssl_invoice_number" value="20131226">
+    <input type="hidden" name="ssl_customer_code" id="ssl_customer_code">
+    <input type="hidden" name="ssl_email" value="hardikmansaraa@gmail.com">
+    <input type="hidden" name="ssl_receipt_link_method" value="GET"/>
+    <input type="hidden" name="ssl_receipt_link_url" id="ssl_receipt_link_url" />
+    <input type="submit" value="pay now" class="button1">
+</form>

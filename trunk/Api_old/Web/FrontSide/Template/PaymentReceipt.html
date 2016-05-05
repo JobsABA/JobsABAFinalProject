@@ -1,0 +1,76 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="text-center">Payment Receipt</h3>
+            <hr />
+        </div>
+        <div class="col-lg-12">
+            <div class="col-lg-4">
+                <p>Order Id: <span>{{modalPaymentResponse.orderid}}</span></p>
+            </div>
+            <div class="col-lg-4">
+                <p>Amount: <span>{{modalPaymentResponse.ssl_amount}}</span></p>
+            </div>
+            <div class="col-lg-4">
+                <p>Approval Code: <span>{{modalPaymentResponse.ssl_approval_code}}</span></p>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="col-lg-4">
+                <p>Customer Code: <span>{{modalPaymentResponse.ssl_customer_code}}</span></p>
+            </div>
+            <div class="col-lg-4">
+                <p>Invoice Number: <span>{{modalPaymentResponse.ssl_invoice_number}}</span></p>
+            </div>
+            <div class="col-lg-4">
+                <p>Response Message: <span>{{modalPaymentResponse.ssl_result_message}}</span></p>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="col-lg-4">
+                <p>Transaction ID: <span>{{modalPaymentResponse.ssl_txn_id}}</span></p>
+            </div>
+            <div class="col-lg-4">
+                <p>Transaction Time: <span>{{modalPaymentResponse.ssl_txn_time}}</span></p>
+            </div>
+           
+        </div>
+        <hr />
+        <h4 class="text-center">Personal Detail</h4>
+        <hr />
+        <div class="col-lg-12">
+            <div class="col-lg-4">
+                <p>Company: <span>{{modalPaymentResponse.ssl_company}}</span></p>
+            </div>
+            <div class="col-lg-4">
+                <p>First Name: <span>{{modalPaymentResponse.ssl_first_name}}</span></p>
+            </div>
+            <div class="col-lg-4">
+                <p>Last Name: <span>{{modalPaymentResponse.ssl_last_name}}</span></p>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="col-lg-4">
+                <p>Address1: <span>{{modalPaymentResponse.ssl_avs_address}}</span></p>
+            </div>
+            <div class="col-lg-4">
+                <p>Address2: <span>{{modalPaymentResponse.ssl_address2}}</span></p>
+            </div>
+            <div class="col-lg-4">
+                <p>City: <span>{{modalPaymentResponse.ssl_city}}</span></p>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="col-lg-4">
+                <p>State: <span>{{modalPaymentResponse.ssl_state}}</span></p>
+            </div>
+            <div class="col-lg-4">
+                <p>Country: <span>{{modalPaymentResponse.ssl_country}}</span></p>
+            </div>
+            <div class="col-lg-4">
+                <p>Postal Code: <span>{{modalPaymentResponse.ssl_avs_zip}}</span></p>
+            </div>
+            
+        </div>
+    </div>
+</div>

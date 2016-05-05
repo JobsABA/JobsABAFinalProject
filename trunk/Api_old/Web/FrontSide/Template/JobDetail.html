@@ -1,0 +1,60 @@
+﻿<div class="container" id="jobDetailMain">
+    <div class="row jobDetailRow">
+        <div class="col-lg-12 text-center">
+            <h3>Job Detail</h3>
+        </div>
+        <hr />
+        <div class="col-lg-12">
+            <div class="col-lg-3">
+                <img src="assets/img/no-image-company.png" ng-if="ImageExtension==''" style="width:100%;height:150px;">
+                <img src="{{API_PATH_Image}}/FileUpload/CompanyImage/{{objJobDetail.BusinessID}}{{ImageExtension}}?d={{randomNumber}}" style="width:100%;height:150px;" ng-if="ImageExtension!=''">
+            </div>
+            <div class="col-lg-9">
+                <h4>{{objJobDetail.Title}}</h4>
+                <p><a href="#viewcompanyprofile/{{objJobDetail.BusinessID}}">{{objJobDetail.Business.Name}}</a></p>
+                <p>{{objJobDetail.StartDate}} - {{objJobDetail.EndDate}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row jobDetailRow">
+        <div class="col-lg-12">
+            <h4 class="text-center">Job Description</h4>
+            <hr />
+            <p>
+                {{objJobDetail.Description}}
+            </p>
+        </div>
+    </div>
+
+    <div class="row jobDetailRow">
+        <div class="col-lg-12">
+            <p><b>Position: </b>Marketing</p>
+            
+            <!--<p><b>Skill: </b>.Net, SQL Server</p>
+            <p><b>Qualification: </b>B.E.I.T</p>
+            <p><b>Exprience: </b>2Year - 4Year</p>
+            <p>
+                <b>Responsibility: </b>
+                Responding to incoming email & phone inquiries.
+                Listen attentively to customers need.
+                Must have sound knowledge of Online marketing concepts.
+                Must be a Team player.Daily reporting. :
+            </p>-->
+            <p><b>Location: </b>2-JobsAbA, California, 1203</p>
+            <p><b>Employment Type: </b>Contract</p>
+            <p><b>Resume Send on: </b><a href="mailto:jobsaba@gmail.com">jobsaba@gmail.com</a></p>
+            <p><b>Compensation: </b>
+            <ul>
+                <li>Hourly Amount: $1200</li>
+                <li>Salary Amount: $2400</li>
+            </ul>
+            </p>
+
+        </div>
+    </div>
+
+    <div class="row jobDetailRow text-center">
+        <input type="button" class="btn btn-blue" value="Back" onclick="history.go(-1);" />
+    </div>
+</div>
